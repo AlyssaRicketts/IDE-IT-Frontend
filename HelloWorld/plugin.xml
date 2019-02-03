@@ -58,5 +58,17 @@
          </toolbar>
       </menuContribution>
    </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="HelloWorld.views.category"
+            name="IDE-IT Plug-in"/>
+      <view
+            class="helloworld.views.MainView"
+            category="HelloWorld.views.category"
+            id="helloworld.views.mainView"
+            name="IDE-IT">
+      </view>
+   </extension>
 
 </plugin>
