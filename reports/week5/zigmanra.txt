@@ -1,1 +1,21 @@
-In the last week, our IDE-IT team made a much core clear divide into frontend and backend teams; this helped us to lay out more defined roles and goals for our new IDE-IT frontend team. I have been working on making appropriate edits to our previous project proposal. As we had originally written it as one six-person team we did not go into as much detail as we should have for the frontend. We also discussed what we can begin researching and working on in terms of architecture and implementation. I have been researching ways to enable/disable menu configuration options through methods. I�ve learned that this is a rather challenging topic to research. I had trouble figuring out what to search for and where to start with this issue. While I haven�t been able to figure out how to do this I have created a baseline of knowledge I can bring to the rest of my team to discuss before we carry on more research as a team. Meeting early in the week as a group helped give me a lot of time to try and figure things out on my own and bring questions to my team.   Plans and goals for next week:* Implement a working prototype (with no backend connection)o User interfaceo Mockup list of suggestionso Enable/Disable feature working* Begin user testing* Work on presentationIndividual Status Report 1IDE-IT Frontend: Rachel Zigman
+Individual Status Report 1
+IDE-IT Frontend: Rachel Zigman
+
+In the last week, our IDE-IT team made a much core clear divide into frontend and backend teams; this helped us to 
+lay out more defined roles and goals for our new IDE-IT frontend team. I have been working on making appropriate 
+edits to our previous project proposal. As we had originally written it as one six-person team we did not go into as 
+much detail as we should have for the frontend. We also discussed what we can begin researching and working on in terms 
+of architecture and implementation. I have been researching ways to enable/disable menu configuration options through 
+methods. I’ve learned that this is a rather challenging topic to research. I had trouble figuring out what to search 
+for and where to start with this issue. While I haven’t been able to figure out how to do this I have created a baseline 
+of knowledge I can bring to the rest of my team to discuss before we carry on more research as a team. Meeting early in 
+the week as a group helped give me a lot of time to try and figure things out on my own and bring questions to my team.   
+
+Plans and goals for next week:
+  •	Implement a working prototype (with no backend connection)
+    o	User interface
+    o	Mockup list of suggestions
+    o	Enable/Disable feature working
+  •	Begin user testing
+  •	Work on presentation
+
