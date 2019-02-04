@@ -1,0 +1,12 @@
+1. Last Week’s Goals	a. N/A2. Progress This Week	a. Contributed to architecture and implementation document	b. Began research into design and IDE interfaces 	c. Add some links to helpful resources on building Eclipse plugins
+	d. Provide customer feedback for FootPrint team
+	e. Create new repo for frontend team only
+	f. Download hello world sample tutorial and push to repo3. Plans and Goals for Next Week	a. Investigate use and API of interface elements
+		i. Checkboxes
+		ii. Exit buttons	b. Review the technical details for implementing plugin user interface		i. Parts, Views, and Editors		ii. IWorkbenchPart		iii. EditorPart		iv. ViewPart		v. ISelection		vi. Menu Frameworks	c. Create suggestion objects, with fields:
+		i. Text
+		ii. Type (TOOL or HOTKEY)
+		iii. Interface element (CHECKBOX or ICON)
+		iv. Exit button
+		v. Display (boolean)
+	d. Create map of unique feature strings with suggestion objects
