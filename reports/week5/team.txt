@@ -1,0 +1,27 @@
+﻿Team Status Report
+
+
+Last Week’s Goals
+* N/A
+
+
+Progress this week
+* Completed architecture and implementation document
+* Researched IDE plug-in development tools
+* Provided customer feedback for FootPrint team
+* Created front-end only repository, Google Drive, and mailing list
+* Implemented initial window and checkboxes in plug-in
+* Determined tasks for each member of team
+
+
+Plans and Goals for next week
+* Alyssa: create Suggestion objects and the map of string identifiers to Suggestion objects
+* Puja: add and remove checkboxes/tips dynamically in the window
+* Rachel: figure out how to enable/disable configurations in IDE
+* All: work on project presentation
+
+
+Meeting Agenda
+* Go over architecture diagram
+* Current implementation status
+* Decide on repeat notifications
