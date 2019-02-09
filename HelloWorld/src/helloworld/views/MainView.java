@@ -7,6 +7,7 @@ import java.util.Map;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
@@ -21,8 +22,9 @@ public class MainView extends ViewPart {
 	private Button button;
 	private CLabel hotkey;
 	private Composite thisParent;
+	private Display display;
 	private Map<String, Suggestion> suggestionsMap = new HashMap<String, Suggestion>();
-
+	
     public MainView() {
         super();
         suggestionsMap.put("firstSuggestion", new Suggestion("Try using 'CMD + /' to comment several lines.", HOTKEY, true));
@@ -33,6 +35,11 @@ public class MainView extends ViewPart {
     @Override
     public void createPartControl(Composite parent) {
     	thisParent = parent;
+    	display = PlatformUI.getWorkbench().getDisplay();
+    	FillLayout fillLayout = new FillLayout();
+    	fillLayout.type = SWT.VERTICAL;
+    	thisParent.setLayout(fillLayout);
+
     	for (Suggestion s: suggestionsMap.values()) {
     		if (s.type == CONFIG) {
     			createConfigTip(s);
@@ -48,22 +55,15 @@ public class MainView extends ViewPart {
     }
     
     public void createHotkeyTip(Suggestion s) {
-    	Display display = PlatformUI.getWorkbench().getDisplay();
-        
         Image image = new Image(display, getClass().getResourceAsStream("../../../icons/lightbulb_2.png"));
         
         hotkey = new CLabel(thisParent, 0);
-        
         hotkey.setImage(image);
         hotkey.setText(s.getText());
-        
     }
     
     public void createConfigTip(Suggestion s) {
     	button = new Button(thisParent, SWT.CHECK);
     	button.setText(s.getText());
     }
-    
-
-
 }
