@@ -2,10 +2,10 @@ package main.java;
 
 public class Suggestion {
 	// Fields
-	String displayText;
-	int type;
-	Boolean display;
-	Boolean enabled;
+	public String displayText;
+	public int type;
+	public Boolean display;
+	public Boolean enabled;
 	
 	private static final int CONFIG = 0;
 	private static final int HOTKEY = 1;
