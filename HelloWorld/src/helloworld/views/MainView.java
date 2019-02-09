@@ -7,7 +7,7 @@ import java.util.Map;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
@@ -36,9 +36,10 @@ public class MainView extends ViewPart {
     public void createPartControl(Composite parent) {
     	thisParent = parent;
     	display = PlatformUI.getWorkbench().getDisplay();
-    	FillLayout fillLayout = new FillLayout();
-    	fillLayout.type = SWT.VERTICAL;
-    	thisParent.setLayout(fillLayout);
+    	RowLayout rowLayout = new RowLayout();
+    	rowLayout.type = SWT.VERTICAL;
+    	rowLayout.pack = true;
+    	thisParent.setLayout(rowLayout);
 
     	for (Suggestion s: suggestionsMap.values()) {
     		if (s.type == CONFIG) {
@@ -51,12 +52,11 @@ public class MainView extends ViewPart {
 
     @Override
     public void setFocus() {
-        hotkey.setFocus();
+        thisParent.setFocus();
     }
     
     public void createHotkeyTip(Suggestion s) {
         Image image = new Image(display, getClass().getResourceAsStream("../../../icons/lightbulb_2.png"));
-        
         hotkey = new CLabel(thisParent, 0);
         hotkey.setImage(image);
         hotkey.setText(s.getText());
