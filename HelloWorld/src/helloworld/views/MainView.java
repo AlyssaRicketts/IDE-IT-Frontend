@@ -50,7 +50,7 @@ public class MainView extends ViewPart {
     public void createHotkeyTip(Suggestion s) {
     	Display display = PlatformUI.getWorkbench().getDisplay();
         
-        Image image = new Image(display, getClass().getResourceAsStream("lightbulb.png"));
+        Image image = new Image(display, getClass().getResourceAsStream("../../../icons/lightbulb_2.png"));
         
         hotkey = new CLabel(thisParent, 0);
         
