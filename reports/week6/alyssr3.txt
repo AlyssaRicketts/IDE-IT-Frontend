@@ -1,0 +1,20 @@
+1. Last Week’s Goals	a. Investigate use and API of interface elements
+		i. Checkboxes
+		ii. Exit buttons	b. Review the technical details for implementing plugin user interface		i. Parts, Views, and Editors		ii. IWorkbenchPart		iii. EditorPart		iv. ViewPart		v. ISelection		vi. Menu Frameworks	c. Create suggestion objects, with fields:
+		i. Text
+		ii. Type (TOOL or HOTKEY)
+		iii. Interface element (CHECKBOX or ICON)
+		iv. Exit button
+		v. Display (boolean)
+	d. Create map of unique feature strings with suggestion objects2. Progress This Week
+	a. Contributed to user manual
+	b. Incorporated feedback into the working project proposal document
+	c. Together, we implemented suggestion objects, the map of strings to these objects, as well as a window in our plugin which produces text with lightbulb icons for hotkey tips, and checkboxes for configuration settings.
+	d. After doing this as a team, I adjusted the formatting so these suggestions appear vertically, and packed at the top of the window.
+	e. Created most of the project presentation slides
+	f. Further investigated Java SWT API3. Plans and Goals for Next Week
+	a. Add an "X" exit button to our suggestions in the window
+	b. Begin to coordinate with backend team in preparation of joining the two parts
+		i. Implement the interface via registering our plugin as a "suggestionObserver"
+		ii. Create method which will be called when receiving new suggestions, that searches the map for the given string and populates the window with the corresponding field object
+	c. Decide how to handle errors and multiple repeat suggestions
