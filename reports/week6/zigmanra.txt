@@ -1,0 +1,28 @@
+Individual Status Report 2
+IDE-IT Frontend: Rachel Zigman
+
+Goals from Last Week:
+-	Implement a working prototype (with no backend connection)
+    o	User interface
+    o	Mockup list of suggestions
+    o	Enable/Disable feature working
+-	Begin user testing
+-	Work on presentation
+
+Progress from this Week:
+This week, I continued to make adjustments in our project proposal based on the 
+continued feedback we’ve received. As a team, we read through another groups work 
+and I typed up our feedback for them. In the middle of the week we met as a group 
+and worked on some implementation details and then discussed plans for the rest 
+of the week. After our meeting we had made progress toward having both a checkbox 
+with a label and an icon with a label showing up in our plugin window. I was able 
+to later fix several bugs and got the icon to show up in the correct location and 
+in the correct size. We also realized our goals from last week were very broad and 
+a bit too eager, so I also focused on defining more realistic goals.
+
+Plans and Goals for Next Week:
+-	Continue implementation
+    o	Delete “X” button next to each tip/config option
+    o	Mockup list of suggestions
+-	Research more about enable/disable feature 
+-	Continue user testing 
