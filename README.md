@@ -48,6 +48,10 @@ If the IDE-IT window does not appear right away, it can be made visible by going
 
 ## 4 API to Register Other Backends
 
+The backend has a feature suggestion observer which determines the feature(s) the user could be using and returns a list of strings of the feature ids to the frontend. This is called with the getAllFeatureIDs() method within the feature suggestion interface. 
+
+If new features are being observed in the API, include the feature id string and the configuration/shortcut in the documentation. If the new feature is a hotkey shortcut, this can be added into the front end suggestions manually. If the new feature is a configuration, create a new issue in this repository. Otherwise, for existing features, use the same feature ids present in the current frontend tool.
+
 <sup>[back to top](#ide-it-frontend)</sup>
 
 ## 5 Reporting Bugs
