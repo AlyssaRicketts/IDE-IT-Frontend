@@ -16,7 +16,9 @@
 
 ## 1 Introduction
 
+The Eclipse IDE provides helpful user interfaces and features for authoring, modifying, compiling, deploying, and debugging software. However, due to low accessibility and awareness of these tools and features, only a small number of these powerful IDE functionalities get used. Additionally, many developers find that many tools in their IDEs are not trivial to configure, and this prevents them from using the tool at all. The aim of IDE-IT Frontend is to improve the discoverability of existing IDE tools and shortcuts.
 
+IDE-IT Frontend teaches users about the existance of features through non-invasive notifications when users neglect to use relevant features. It displays suggestions to the user in two forms: tool enable/disable and hotkey shortcut tips. Tool enable/disable suggestions appear with a checkbox next to them, which enables or disables the suggested tool accordingly if clicked.
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
@@ -27,7 +29,7 @@ This section provides the instruction for installing IDE-IT Frontend.
 1. Clone this repository to your local machine
 2. Build the plugin locally using gradle:
 
-    ./gradlew clean build
+    `./gradlew clean build`
     
 3. Open Eclipse
 4. From the menu choose: **Help|Install New Software**
@@ -36,7 +38,7 @@ This section provides the instruction for installing IDE-IT Frontend.
 7. Select your plugin file, click **OK**
 8. Restart Eclipse
 
-If the IDE-IT window does not appear right away, it can be made visible by going to the **Window** drop down menu. From here, select **Show View**, and then choose the **Other** option. From the list of folders that appears, under the **IDE-IT Plug-in** folder, select the *IDE-IT* option. Then, click **Open**.
+If the IDE-IT window does not appear right away, it can be made visible by going to the **Window** drop down menu. From here, select **Show View**, and then choose the **Other** option. From the list of folders that appears, under the **IDE-IT Plug-in** folder, select the **IDE-IT** option. Then, click **Open**.
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
