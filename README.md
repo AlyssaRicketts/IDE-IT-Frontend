@@ -56,9 +56,11 @@ Once the window is visible, just begin working on your project. The window will 
 
 ## 4 API to Register Other Backends
 
-The backend has a feature suggestion observer which determines the feature(s) the user could be using and returns a list of strings of the feature ids to the frontend. This is called with the getAllFeatureIDs() method within the feature suggestion interface. 
+This plugin is specifically for the front-end of IDE-IT. It requires a back-end service that tracks document changes within the Eclipse IDE to provide a list of feature suggestions to this plugin. The recommended back-end service for this plugin is the IDE-IT back-end plugin, located at https://github.com/DavidThien/IDE-IT. If you would like to use a different back-end service, see how to do so below.
 
-If new features are being observed in the API, include the feature id string and the configuration/shortcut in the documentation. If the new feature is a hotkey shortcut, this can be added into the front end suggestions manually. If the new feature is a configuration, create a new issue in this repository. Otherwise, for existing features, use the same feature ids present in the current frontend tool.
+The front-end depends on a [FeatureSuggestionObserver](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionObserver.java) abstract class and a [FeatureSuggestionInterface](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionInterface.java ) abstract class. You should include these abstract classes within your project when you implement your own observers.
+
+The observers are notified with a string that uniquely identifies each Eclipse feature. Create a file named featureIDStrings.txt in the root folder of your repository with the features you want to include. Be sure to add documentation of the hotkey shortcut or configuration setting that corresponds to each feature ID. Create a new issue within this repository if you add additional features to suggest. Otherwise, use the same [feature IDs](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt) present in the current tool. 
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
