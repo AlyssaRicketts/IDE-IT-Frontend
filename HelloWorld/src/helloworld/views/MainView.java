@@ -14,6 +14,8 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
+import interfaces.FeatureSuggestion;
+import main.java.FSObserver;
 import main.java.Suggestion;
 
 public class MainView extends ViewPart {
@@ -25,6 +27,9 @@ public class MainView extends ViewPart {
 	private Display display;
 	private Map<String, Suggestion> suggestionsMap = new HashMap<String, Suggestion>();
 	
+	FeatureSuggestion fs = new FeatureSuggestion();
+	FSObserver obs = new FSObserver();
+	
     public MainView() {
         super();
         suggestionsMap.put("firstSuggestion", new Suggestion("Try using 'CMD + /' to comment several lines.", HOTKEY, true));
@@ -35,6 +40,7 @@ public class MainView extends ViewPart {
     @Override
     public void createPartControl(Composite parent) {
     	thisParent = parent;
+    	fs.registerObserver(obs);
     	display = PlatformUI.getWorkbench().getDisplay();
     	RowLayout rowLayout = new RowLayout();
     	rowLayout.type = SWT.VERTICAL;
