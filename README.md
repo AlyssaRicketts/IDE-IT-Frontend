@@ -16,9 +16,13 @@
 
 ## 1 Introduction
 
-The Eclipse IDE provides helpful user interfaces and features for authoring, modifying, compiling, deploying, and debugging software. However, due to low accessibility and awareness of these tools and features, only a small number of these powerful IDE functionalities get used. Additionally, many developers find that many tools in their IDEs are not trivial to configure, and this prevents them from using the tool at all. The aim of IDE-IT Frontend is to improve the discoverability of existing IDE tools and shortcuts.
+### 1.1 Motivation
 
-IDE-IT Frontend teaches users about the existance of features through non-invasive notifications when users neglect to use relevant features. It displays suggestions to the user in two forms: tool enable/disable and hotkey shortcut tips. Tool enable/disable suggestions appear with a checkbox next to them, which enables or disables the suggested tool accordingly if clicked.
+The Eclipse IDE provides helpful user interfaces and features for authoring, modifying, compiling, deploying, and debugging software. However, due to low accessibility and awareness of these tools and features, only a small number of these powerful IDE functionalities get used. Additionally, many developers find that many tools in their IDEs are not trivial to configure, and this prevents them from using the tool at all. The aim of the Integrated Development Environment - Intelligent Tutorials (IDE-IT) is to improve the discoverability of existing IDE tools and shortcuts, by providing developers non-invasive suggestions on Eclipse features that they may not be aware of. 
+
+### 1.2 IDE-IT Frontend
+
+This repository / plugin is specifically for the frontend service of IDE-IT. This is not designed to be a standalone plugin. It requires a the use of a backend service that tracks user action such as document changes, key presses, and mouse clicks, and then performs the evaluation of which hotkeys and configurations to suggest. We recommend the IDE-IT backend plugin, located at https://github.com/DavidThien/IDE-IT, as this framework is built specifically for IDE-IT. If you would like to use your own custom backend framework, see below on how to incorporate our service to your own plugin.
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
@@ -46,7 +50,7 @@ If the IDE-IT window does not appear right away, it can be made visible by going
 
 To use this plugin first make sure the IDE-IT window is visible in your IDE, if it is not visible finish the steps in Installation above. 
 
-Once the window is visible, just begin working on your project. The window will update based on patterns in you keystrokes with hotkey tips and features you might want to enable or disable. The goal is to help make coding easier and more fluent for you by introducing you to things that exist in the IDE that you may not be aware of. However, if you notice a tip or enable/disable feature is showing up and you do not want to see it again, simply press the "X" to the right of it and you will not see it again. 
+Once the window is visible, just begin working on your project. The window will update based on patterns in you keystrokes with hotkey tips and features you might want to enable or disable. It displays suggestions to the user in two forms: tool enable/disable and hotkey shortcut tips. Tool enable/disable suggestions appear with a checkbox next to them, which enables or disables the suggested tool accordingly if clicked. The goal is to help make coding easier and more fluent for you by introducing you to things that exist in the IDE that you may not be aware of. However, if you notice a tip or enable/disable feature is showing up and you do not want to see it again, simply press the "X" to the right of it and you will not see it again. 
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
