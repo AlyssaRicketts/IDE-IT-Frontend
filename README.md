@@ -54,10 +54,20 @@ Once the window is visible, just begin working on your project. The window will 
     
     3.1 Window Appearance
     
-    Tool enable/disable appears with a checkbox next to a text description of the tool
-    Hotkey tips appear with a lightbulb icon next to a text description of the hotkey/shortcut
+    Tool enable/disable appears with a checkbox next to a text description of the tool.
+    Hotkey tips appear with a lightbulb icon next to a text description of the hotkey/shortcut.
+
+    3.2 Enabling/Disabling Suggested Congfigurations
     
+    Simply check or uncheck the box next to the tool you would like to enable or disable.
     
+    3.3 Using Suggested Hotkeys
+    
+    Next to the lightbulb icons will be suggested hotkeys, these are keyboard shortcuts that might make your coding experience easier and       quicker.
+    
+    3.4 Removing unwanted suggestions
+    
+    If you do not wish to see a hotkey tip or are not interested in an enable/disable feature, simply click the "X" on the right of that       tip or tool and it will not show up again.
     
     
 
