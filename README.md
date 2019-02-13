@@ -50,7 +50,11 @@ If the IDE-IT window does not appear right away, it can be made visible by going
 
 To use this plugin first make sure the IDE-IT window is visible in your IDE, if it is not visible finish the steps in Installation above. 
 
-Once the window is visible, just begin working on your project. The window will update based on patterns in you keystrokes with hotkey tips and features you might want to enable or disable. It displays suggestions to the user in two forms: tool enable/disable and hotkey shortcut tips. Tool enable/disable suggestions appear with a checkbox next to them, which enables or disables the suggested tool accordingly if clicked. The goal is to help make coding easier and more fluent for you by introducing you to things that exist in the IDE that you may not be aware of. However, if you notice a tip or enable/disable feature is showing up and you do not want to see it again, simply press the "X" to the right of it and you will not see it again. 
+Once the window is visible, just begin working on your project. The window will update based on patterns in you keystrokes with hotkey tips and features you might want to enable or disable. It displays suggestions to the user in two forms: tool enable/disable and hotkey shortcut tips. Tool enable/disable suggestions appear with a checkbox next to them, which enables or disables the suggested tool accordingly if clicked and hotkey tips will appear with a lightbulb icon next to them. The goal is to help make coding easier and more fluent for you by introducing you to things that exist in the IDE that you may not be aware of. However, if you notice a tip or enable/disable feature is showing up and you do not want to see it again, simply press the "X" to the right of it and you will not see it again. 
+    
+    ## 3.1 Window Appearance
+    
+    
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
