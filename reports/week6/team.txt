@@ -1,0 +1,35 @@
+﻿Team Status Report
+
+
+Last Week’s Goals
+* Create Suggestion objects and the map of string identifiers to Suggestion objects
+* Add and remove checkboxes/tips dynamically in the window
+* Figure out how to enable/disable configurations in IDE
+* Work on project presentation
+
+
+Progress this week
+* Completed user manual
+* Incorporated feedback into the working project proposal
+* Implemented suggestion objects and map of strings to these objects
+* Implemented a window in our plugin which produces text with lightbulb icons for hotkey tips and checkboxes for configuration settings
+* Better understanding of Java SWT API
+* Challenge was figuring out how to enable/disable configurations in IDE
+* We all met with the backend team to discuss what each team needed from each other, update each other subteam, and discuss the interface API
+* Decided on a working list of strings, agreed upon with the backend team
+* Completed project presentation
+
+
+Plans and Goals for next week
+* Add delete functionality via “X” exit buttons to our suggestions in the window
+* Coordinate with backend team in preparations of joining the two plugins
+   * Implement the interface via registering our plugin as a “suggestionObserver”
+   * Create method which will be called when receiving new suggestions that searches the map for the given string and populates the window with corresponding objects
+* Decide how to handle errors and multiple repeat suggestions
+* Figure out how to enable/disable configurations in IDE
+
+
+Meeting Agenda
+* Discuss decision for backend team to currently only handle suggesting hotkeys, so frontend shall simply suggest a few of the “top” configurations/settings for the Eclipse IDE, rather than use real-time user input to suggest these
+* Discuss at what point we should begin utilizing a build system such as maven or gradle for our project, and how that will differ since this is a plugin
+* Discuss the importance of integration tests that cover the entire plugin (i.e. both backend and frontend plugins together) and if this is necessary, or if we can mainly focus on testing the plugins independently
