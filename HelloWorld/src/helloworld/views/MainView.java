@@ -25,7 +25,7 @@ public class MainView extends ViewPart {
 	private Display display;
 	private Map<String, Suggestion> suggestionsMap = new HashMap<String, Suggestion>();
 	FeatureSuggestion fs = new FeatureSuggestion();
-	FSObserver obs = new FSObserver();
+	FSObserver obs = new FSObserver(this);
 	
     public MainView() {
         super();
@@ -38,7 +38,6 @@ public class MainView extends ViewPart {
         suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("Enable autocomplete", CONFIG, true, false));
     }
     
-
     @Override
     public void createPartControl(Composite parent) {
     	thisParent = parent;
@@ -49,7 +48,7 @@ public class MainView extends ViewPart {
     	rowLayout.pack = true;
     	rowLayout.marginHeight = 0;
     	thisParent.setLayout(rowLayout);
-
+    	/*
     	for (Suggestion s: suggestionsMap.values()) {
     		if (s.type == CONFIG) {
     			createConfigTip(s);
@@ -57,6 +56,16 @@ public class MainView extends ViewPart {
     			createHotkeyTip(s);
     		}
     	}
+    	*/
+    }
+    
+    public void addFeature(Suggestion s) {
+    	if (s.getType() == CONFIG) {
+			createConfigTip(s);
+		} else {
+			createHotkeyTip(s);
+		}
+    	thisParent.requestLayout();
     }
 
     @Override
