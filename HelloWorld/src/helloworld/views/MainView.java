@@ -21,12 +21,9 @@ import main.java.Suggestion;
 public class MainView extends ViewPart {
 	private static final int CONFIG = 0;
 	private static final int HOTKEY = 1;
-	private Button button;
-	private CLabel hotkey;
 	private Composite thisParent;
 	private Display display;
 	private Map<String, Suggestion> suggestionsMap = new HashMap<String, Suggestion>();
-	
 	FeatureSuggestion fs = new FeatureSuggestion();
 	FSObserver obs = new FSObserver();
 	
@@ -62,14 +59,10 @@ public class MainView extends ViewPart {
     }
     
     public void createHotkeyTip(Suggestion s) {
-        Image image = new Image(display, getClass().getResourceAsStream("../../../icons/lightbulb_2.png"));
-        hotkey = new CLabel(thisParent, 0);
-        hotkey.setImage(image);
-        hotkey.setText(s.getText());
+    	HotkeyDisplayComposite hdc = new HotkeyDisplayComposite(thisParent, s, display);
     }
     
     public void createConfigTip(Suggestion s) {
-    	button = new Button(thisParent, SWT.CHECK);
-    	button.setText(s.getText());
+    	ConfigDisplayComposite cdc = new ConfigDisplayComposite(thisParent, s);
     }
 }
