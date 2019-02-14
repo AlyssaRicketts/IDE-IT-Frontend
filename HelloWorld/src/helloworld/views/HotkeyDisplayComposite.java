@@ -3,6 +3,7 @@ package helloworld.views;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.RowData;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -26,5 +27,6 @@ public class HotkeyDisplayComposite {
     	
     	Button exitButton = new Button(baseComposite, SWT.NONE);
     	exitButton.setText("X");
+    	//exitButton.setLayoutData(new RowData(40, 20));
 	}
 }
