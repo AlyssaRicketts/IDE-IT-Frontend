@@ -8,6 +8,8 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
 
 import main.java.Suggestion;
 
@@ -27,6 +29,11 @@ public class HotkeyDisplayComposite {
     	
     	Button exitButton = new Button(baseComposite, SWT.NONE);
     	exitButton.setText("X");
-    	//exitButton.setLayoutData(new RowData(40, 20));
+    	exitButton.addListener(SWT.Selection, new Listener() {
+    	      public void handleEvent(Event e) {
+    	    	  baseComposite.dispose();
+                  parent.requestLayout();
+    	      }
+    	});
 	}
 }
