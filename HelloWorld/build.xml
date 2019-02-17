@@ -49,6 +49,7 @@
     	<pathelement location="lib/org.eclipse.ui-3.111.0.jar"/>
     	<pathelement location="lib/org.eclipse.ui.workbench-3.112.100.jar"/>
     	<pathelement location="lib/inject-1.0.0.jar"/>
+    	<pathelement location="../IDE-IT/backend_plugin"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
