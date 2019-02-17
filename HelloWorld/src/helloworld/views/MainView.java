@@ -1,6 +1,5 @@
 package helloworld.views;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.swt.SWT;
@@ -11,27 +10,19 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
 import interfaces.FeatureSuggestion;
+import main.java.Controller;
 import main.java.FSObserver;
 import main.java.Suggestion;
 
 public class MainView extends ViewPart {
 	private static final int CONFIG = 0;
-	private static final int HOTKEY = 1;
 	private Composite thisParent;
 	private Display display;
-	private Map<String, Suggestion> suggestionsMap = new HashMap<String, Suggestion>();
 	FeatureSuggestion fs = new FeatureSuggestion();
 	FSObserver obs = new FSObserver(this);
 	
     public MainView() {
         super();
-        suggestionsMap.put("blockCommentSuggestion", new Suggestion("Try using 'CMD + /' to comment several lines.", HOTKEY, true));
-        suggestionsMap.put("addImportStatementsSuggestion", new Suggestion("Try using 'Ctrl + Shift + O' to add import statements.", HOTKEY, true));
-        suggestionsMap.put("removeUnusedImportsStatementSuggestion", new Suggestion("Try using 'Ctrl + Shift + O' to remove unused imports.", HOTKEY, true));
-        suggestionsMap.put("correctIndentationsSuggestion", new Suggestion("Try using 'Ctrl + i' to correct indentation.", HOTKEY, true));
-        suggestionsMap.put("variableRenameRefactorSuggestion", new Suggestion("Try using 'Alt + Shift + R' to rename all instances of a variable, class, or method.", HOTKEY, true));
-        
-        suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("Enable autocomplete", CONFIG, true, false));
     }
     
     @Override
@@ -44,6 +35,12 @@ public class MainView extends ViewPart {
     	rowLayout.pack = true;
     	rowLayout.marginHeight = 0;
     	thisParent.setLayout(rowLayout);
+    	
+    	// Temporary hard-code content assist suggestion
+    	Controller control = new Controller();
+    	Map<String, Suggestion> suggestionsMap = control.getSuggestionsMap();
+    	Suggestion feature = suggestionsMap.get("enableAutocompleteSuggestion");
+    	addFeature(feature);
     }
     
     public void addFeature(Suggestion s) {
