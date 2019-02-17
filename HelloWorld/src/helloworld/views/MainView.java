@@ -1,14 +1,10 @@
 package helloworld.views;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.CLabel;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
@@ -48,15 +44,6 @@ public class MainView extends ViewPart {
     	rowLayout.pack = true;
     	rowLayout.marginHeight = 0;
     	thisParent.setLayout(rowLayout);
-    	/*
-    	for (Suggestion s: suggestionsMap.values()) {
-    		if (s.type == CONFIG) {
-    			createConfigTip(s);
-    		} else {
-    			createHotkeyTip(s);
-    		}
-    	}
-    	*/
     }
     
     public void addFeature(Suggestion s) {
