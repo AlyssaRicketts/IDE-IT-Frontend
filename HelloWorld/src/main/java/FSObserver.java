@@ -1,13 +1,9 @@
 package main.java;
 
-import java.util.HashMap;
 import java.util.Map;
-
-import org.eclipse.swt.widgets.Composite;
 
 import helloworld.views.MainView;
 import interfaces.FeatureSuggestionObserver;
-import main.java.Controller;
 
 public class FSObserver extends FeatureSuggestionObserver {
 	MainView view;

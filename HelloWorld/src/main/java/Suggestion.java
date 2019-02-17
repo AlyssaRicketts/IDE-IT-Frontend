@@ -34,6 +34,9 @@ public class Suggestion {
 	}
 	
 	public Boolean getEnabled() {
+		if (this.type == HOTKEY) {
+			throw new IllegalArgumentException("Hotkeys cannot be enabled or disabled");
+		}
 		return this.enabled;
 	}
 	
@@ -42,7 +45,7 @@ public class Suggestion {
 	}
 	
 	public void setType(int type) {
-		if(type != CONFIG || type != HOTKEY) {
+		if (type != CONFIG && type != HOTKEY) {
 			throw new IllegalArgumentException("Type must be of CONFIG (0) or HOTKEY (1).");
 		}
 		this.type = type;
@@ -53,6 +56,19 @@ public class Suggestion {
 	}
 	
 	public void setEnabled(Boolean enabled) {
+		if (this.type == HOTKEY) {
+			throw new IllegalArgumentException("Hotkeys cannot be enabled or disabled");
+		}
 		this.enabled = enabled;
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		if (!(other instanceof Suggestion)) {
+			return false;
+		}
+		Suggestion compared = (Suggestion) other;
+		return this.displayText.equals(compared.displayText) && this.type == compared.type
+				&& this.display == compared.display && this.enabled == compared.enabled;
 	}
 }
