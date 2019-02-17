@@ -8,7 +8,7 @@
     <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
+    <property name="source" location = 'HelloWorld/src' value="1.8"/>
     <path id="Plug-in Dependencies.libraryclasspath">
         <pathelement location="../../../.p2/pool/plugins/org.eclipse.ui_3.111.0.v20181117-0847.jar"/>
         <pathelement location="../../../.p2/pool/plugins/org.eclipse.swt_3.109.0.v20181204-1801.jar"/>
