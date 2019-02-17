@@ -27,7 +27,7 @@ public class ConfigDisplayComposite {
     	checkBox.addListener(SWT.CHECK, new Listener() {
     		public void handleEvent(Event e) {
     			IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.ui");
-    			prefs.put("content_assist_autoactivation", "true");
+    			prefs.put("content_assist_autoactivation", "false");
     			
     			try {
     				prefs.flush(); 
