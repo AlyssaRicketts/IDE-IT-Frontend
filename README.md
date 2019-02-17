@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/AlyssaRicketts/IDE-IT-Frontend.svg?branch=master)](https://travis-ci.com/AlyssaRicketts/IDE-IT-Frontend)
+
 # IDE-IT Frontend 
 #### Introduction and User Manual
 
