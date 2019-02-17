@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import main.java.Suggestion;
 
-
 public class SuggestionTest {
 	private Suggestion hotkey;
 	private Suggestion config;

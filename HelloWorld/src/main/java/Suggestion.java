@@ -61,4 +61,14 @@ public class Suggestion {
 		}
 		this.enabled = enabled;
 	}
+	
+	@Override
+	public boolean equals(Object other) {
+		if (!(other instanceof Suggestion)) {
+			return false;
+		}
+		Suggestion compared = (Suggestion) other;
+		return this.displayText.equals(compared.displayText) && this.type == compared.type
+				&& this.display == compared.display && this.enabled == compared.enabled;
+	}
 }
