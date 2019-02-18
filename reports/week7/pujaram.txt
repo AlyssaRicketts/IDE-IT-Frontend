@@ -1,0 +1,31 @@
+Puja Ramanathan
+CSE 403
+February 18, 2019
+Individual Status Report
+
+Goals from last week:
+My plans for the following week will be to add a delete functionality for the tips. Currently, all 
+suggestions in our map are added to the window. I will insert an x on each tip line and remove 
+the suggestion if the user clicks on the x. If I have extra time, I will help research how to enable 
+configurations through the code. 
+
+Progress this week:
+This week I wrote a portion of our user manual detailing how to use our frontend plugin with 
+other backends. I also implemented populating our window with suggestions detected from the 
+backend. This involved matching the feature identifier sent by the backend with our map and 
+dynamically adding suggestions into the view. I tried using a functional testing tool called 
+SWTBot to do UI testing, yet ran into many errors on runtime. I wrote unit tests for the object 
+classes we created, namely the Suggestion and Controller objects. I looked into integration 
+testing, but this is more complicated than anticipated and most of this testing can also be 
+covered by user testing. Lastly, I was able to get our continuous integration running by creating 
+a build file and using Travis CI. The only problem I faced with this was importing the backend 
+plugin as a dependency in the build file.
+
+Plans for the following week:
+My plans for the following week include having a passing build upon integration of the backend 
+and working on testing. I will see if I can simulate a user’s behavior in the IDE to see if we are 
+receiving the correct feature from the backend and to see that the right suggestion is being 
+displayed in the window. I will also help research and implement configuration enabling as well 
+as conduct our user testing with the surveys that we create. After the results of the survey, I 
+will implement the changes based on the feedback to improve the plugin.
+
