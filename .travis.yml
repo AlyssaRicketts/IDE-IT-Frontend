@@ -1,5 +1,3 @@
 language: java
-before_install: 
-- git clone https://github.com/DavidThien/IDE-IT.git
-- cd HelloWorld
+before_install: cd HelloWorld
 script: ant build
