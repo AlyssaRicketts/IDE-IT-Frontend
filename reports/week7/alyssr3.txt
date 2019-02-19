@@ -1,0 +1,19 @@
+1. Last Week’s Goals	a. Add an "X" exit button to our suggestions in the window
+	b. Begin to coordinate with backend team in preparation of joining the two parts
+		i. Implement the interface via registering our plugin as a "suggestionObserver"
+		ii. Create method which will be called when receiving new suggestions, that searches the map for the given string and populates the window with the corresponding field object
+	c. Decide how to handle errors and multiple repeat suggestions2. Progress This Week
+	a. Add an "X" exit button to our suggestions in the window
+	b. Created hotkey composite objects and config composite objects
+	c. Create listener on exit button to remove suggestion from window when it is clicked
+	d. Integrate Travis CI with our GitHub repo
+	e. Worked with a member on the backend team to implement the interface between the two plugins
+	f. Debug and successfully integrated the two plugins
+	g. Began to look into how to remove the binding errors that occur when we run plugin.xml (been there since downloaded HelloWorld example)
+	h. Made a lot of progress on changing a preference/configuration when the user clicks the checkbox
+		i. Learned how to use the IEclipsePreference API to get and set preferences
+		ii. Added a listener to the checkbox button to change the content assist auto activation preference
+		iii. Still working on this because it seems to work differently since, when we "run" our xml file, it launches a new Eclipse window and workspace, and changing the properties here is more challenging3. Plans and Goals for Next Week
+	a. Finish implementing changing a preference on checkbox click
+	b. Create methods which hardcode suggestions to appear at certain times (not relying on backend) to begin user testing
+	c. Work with backend team utilize gradle or maven to build our system
