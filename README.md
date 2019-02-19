@@ -61,7 +61,8 @@ If the IDE-IT window does not appear right away, it can be made visible by going
 
 To use this plugin first make sure the IDE-IT window is visible in your IDE, if it is not visible finish the steps in Installation above. Once the window is visible, just begin working on your project. The window will update based on patterns in your keystrokes with hotkey tips and features you might want to enable or disable.
 
-![x](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/HelloWorld/icons/GUI.png)
+![](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/HelloWorld/icons/GUI.png)
+Figure 1: Mockup of IDE-IT user interface window within an Eclipse workspace.
     
 ### 3.1 Window Appearance    
 
