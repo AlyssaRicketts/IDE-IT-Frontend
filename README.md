@@ -60,6 +60,8 @@ If the IDE-IT window does not appear right away, it can be made visible by going
 ## 3 Using IDE-IT Frontend
 
 To use this plugin first make sure the IDE-IT window is visible in your IDE, if it is not visible finish the steps in Installation above. Once the window is visible, just begin working on your project. The window will update based on patterns in your keystrokes with hotkey tips and features you might want to enable or disable.
+
+![x](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/HelloWorld/icons/GUI.png)
     
 ### 3.1 Window Appearance    
 
