@@ -32,17 +32,26 @@ This repository / plugin is specifically for the frontend service of IDE-IT. Thi
 
 This section provides the instruction for installing IDE-IT Frontend.
 
-1. Clone this repository to your local machine
-2. Build the plugin locally using gradle:
+### 2.1 Prerequisites
 
-    `./gradlew clean build`
+1. Java JDK version 1.8.0 or higher. See [Oracle Java Downloads](https://www.oracle.com/technetwork/java/javase/downloads/index.html) for more.
+2. Apache Ant version 1.10.5 or higher. See [Apache Ant Binary Distributions](https://ant.apache.org/bindownload.cgi) for more.
+3. Eclipse IDE version 2018-12 or higher. See [Eclipse IDE Downloads](https://www.eclipse.org/eclipseide/) for more.
+
+### 2.2 Build and Open in Eclipse
+
+1. Clone this repository to your local machine
+2. Navigate into the **HelloWorld** folder within the cloned IDE-IT-Frontend folder
+3. Build the plugin locally using ant:
+
+    `ant build`
     
-3. Open Eclipse
-4. From the menu choose: **Help|Install New Software**
-5. Click the **Add** button
-6. In the **Add Repository** dialog that appears, click the **Archive** button next to the **Location** field
-7. Select your plugin file, click **OK**
-8. Restart Eclipse
+4. Open Eclipse
+5. From the menu choose: **Help|Install New Software**
+6. Click the **Add** button
+7. In the **Add Repository** dialog that appears, click the **Archive** button next to the **Location** field
+8. Select your plugin file, click **OK**
+9. Restart Eclipse
 
 If the IDE-IT window does not appear right away, it can be made visible by going to the **Window** drop down menu. From here, select **Show View**, and then choose the **Other** option. From the list of folders that appears, under the **IDE-IT Plug-in** folder, select the **IDE-IT** option. Then, click **Open**.
 
