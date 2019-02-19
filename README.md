@@ -24,7 +24,7 @@ The Eclipse IDE provides helpful user interfaces and features for authoring, mod
 
 ### 1.2 IDE-IT Frontend
 
-This repository / plugin is specifically for the frontend service of IDE-IT. This is not designed to be a standalone plugin. It requires a the use of a backend service that tracks user action such as document changes, key presses, and mouse clicks, and then performs the evaluation of which hotkeys and configurations to suggest. We recommend the IDE-IT backend plugin, located at https://github.com/DavidThien/IDE-IT, as this framework is built specifically for IDE-IT. If you would like to use your own custom backend framework, see below on how to incorporate our service to your own plugin.
+This repository / plugin is specifically for the frontend service of IDE-IT. This is not designed to be a standalone plugin. It requires a the use of a backend service that tracks user action such as document changes, key presses, and mouse clicks, and then performs the evaluation of which hotkeys and configurations to suggest. We recommend the IDE-IT backend plugin, located at https://github.com/DavidThien/IDE-IT, as this framework is built specifically for IDE-IT. If you would like to use your own custom backend framework, see [below](#4-api-to-register-other-backends) on how to incorporate our service to your own plugin.
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
