@@ -1,0 +1,21 @@
+Individual Status Report 3
+IDE-IT Frontend: Rachel Zigman
+
+Plans and Goals from Last Week:
+-	Continue implementation
+    •	Delete “X” button next to each tip/config option
+    •	Mockup list of suggestions
+-	Research more about enable/disable feature 
+-	Continue user testing
+
+Progress from this Week:
+We started the week, sitting down as a team (frontend and backend) and discussing what suggestions and hotkeys we are going to implement. We also discussed hardcoding in so features in the frontend that would use the checkbox (enable/disable). This rest of the week I focused on beginning user testing. I wrote up a survey and a basic script that I go through when physically testing our product with a testing participant. I have found four participants as of right now and am actively seeking out more. I also was testing our extremely basic plugin – without connection to the backend so suggestions were just being cycled through our current hardcoded map. I also worked on editing our project report document with the new suggestions.
+
+
+Plans and Goals for Next Week:
+-	Research and implement enable/disable feature
+    •	Add hardcoding suggestions that are not dependent on backend
+-	Continue user testing with more finished product
+    •	Suggestions coming from backend
+    •	Checkboxes working
+-	Make changes to product based on user feedback
