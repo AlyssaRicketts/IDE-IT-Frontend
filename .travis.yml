@@ -1,3 +1,5 @@
 language: java
 before_install: cd HelloWorld
-script: ant build
+script: 
+- ant build
+- ant test
