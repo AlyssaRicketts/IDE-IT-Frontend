@@ -76,7 +76,7 @@ Simply check or uncheck the box next to the tool you would like to enable or dis
 
 Next to the lightbulb icons will be suggested hotkeys, these are keyboard shortcuts that might make your coding experience easier and quicker.
     
-### 3.4 Removing unwanted suggestions
+### 3.4 Removing Unwanted Suggestions
 
 If you do not wish to see a hotkey tip or are not interested in an enable/disable feature, simply click the "X" on the right side of that tip or tool and it will not show up again.
 
@@ -84,11 +84,11 @@ If you do not wish to see a hotkey tip or are not interested in an enable/disabl
 
 ## 4 API to Register Other Backends
 
-This plugin is specifically for the front-end of IDE-IT. It requires a back-end service that tracks document changes within the Eclipse IDE to provide a list of feature suggestions to this plugin. The recommended back-end service for this plugin is the IDE-IT back-end plugin, located at https://github.com/DavidThien/IDE-IT. If you would like to use a different back-end service, see how to do so below.
+This plugin requires a back-end service that tracks document changes within the Eclipse IDE to provide a list of feature suggestions to this plugin. The recommended back-end service for this plugin is the [IDE-IT back-end plugin](https://github.com/DavidThien/IDE-IT). If you would like to use a different back-end service, please continue reading.
 
-The front-end depends on a [FeatureSuggestionObserver](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionObserver.java) abstract class and a [FeatureSuggestionInterface](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionInterface.java ) abstract class. You should include these abstract classes within your project when you implement your own observers.
+The front-end depends on a [FeatureSuggestionObserver](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionObserver.java) abstract class and a [FeatureSuggestionInterface](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionInterface.java) abstract class. You should include these abstract classes within your project when you implement your own observers. You must implement a FeatureSuggestion class which extends [FeatureSuggestionInterface](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionInterface.java). This class should call the notify function in the [FeatureSuggestionObserver](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionObserver.java) class to send the feature ID that uniquely identifies each Eclipse feature to the front-end.
 
-The observers are notified with a string that uniquely identifies each Eclipse feature. Create a file named featureIDStrings.txt in the root folder of your repository with the features you want to include. Be sure to add documentation of the hotkey shortcut or configuration setting that corresponds to each feature ID. Create a new issue within this repository if you add additional features to suggest. Otherwise, use the same [feature IDs](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt) present in the current tool. 
+If the feature suggestions you implement are included within the [current features](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt), you should use the same feature IDs as listed in [this file](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt). To add additional features, add the unique feature ID along with the [Suggestion](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/HelloWorld/src/main/java/Suggestion.java) into the suggestions map in the [Controller](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/HelloWorld/src/main/java/Controller.java). For adding configurations specifically, there will need to be additional implementation to enable or disable the specified configuration.
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
