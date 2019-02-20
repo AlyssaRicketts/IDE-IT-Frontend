@@ -47,7 +47,7 @@ This section provides the instruction for installing IDE-IT Frontend.
     `ant build`
     
 4. Open Eclipse
-5. From the menu choose: **Help|Install New Software**
+5. From the menu choose: **Help | Install New Software**
 6. Click the **Add** button
 7. In the **Add Repository** dialog that appears, click the **Archive** button next to the **Location** field
 8. Select your plugin file, click **OK**
@@ -68,7 +68,7 @@ Figure 1: Mockup of IDE-IT user interface window within an Eclipse workspace.
 
 Tool enable/disable suggestions appear with a checkbox next to a text description of the tool. Hotkey tips appear with a lightbulb icon next to a text description of the hotkey/shortcut.
 
-### 3.2 Enabling/Disabling Suggested Congfigurations
+### 3.2 Enabling/Disabling Suggested Configurations
 
 Simply check or uncheck the box next to the tool you would like to enable or disable.
     
@@ -90,13 +90,15 @@ The front-end depends on a [FeatureSuggestionObserver](https://github.com/DavidT
 
 If the feature suggestions you implement are included within the [current features](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt), you should use the same feature IDs as listed in [this file](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt). To add additional features, add the unique feature ID along with the [Suggestion](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/HelloWorld/src/main/java/Suggestion.java) into the suggestions map in the [Controller](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/HelloWorld/src/main/java/Controller.java). For adding configurations specifically, there will need to be additional implementation to enable or disable the specified configuration.
 
+To connect your plugin, export your project as a jar file named as 'backend_plugin.jar' and place the jar file in the IDE-IT-Frontend/HelloWorld/lib folder. This will include your plugin as a dependency, so the project can be built and run.
+
 <sup>[back to top](#ide-it-frontend)</sup>
 
 ## 5 Reporting Bugs
 
-If you find any bugs in our plugin, please submit an issue to our GitHub page:https://github.com/AlyssaRicketts/IDE-IT-Frontend/issues with the following information:
+If you find any bugs in our plugin, please submit an issue to our GitHub page: https://github.com/AlyssaRicketts/IDE-IT-Frontend/issues with the following information:
 
-- Eclipse Version located by going to **Eclipse|About Eclipse**.
+- Eclipse Version located by going to **Eclipse | About Eclipse**.
 - A brief description of the bug.
 - Specific steps to recreate the bug.
 - (Optional) A screen shot of the bug.
