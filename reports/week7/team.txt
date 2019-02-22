@@ -1,0 +1,39 @@
+Team Status Report
+IDE-IT Frontend 
+
+Last Week’s Goals:
+* Add delete functionality via “X” exit buttons to our suggestions in the window
+* Coordinate with backend team in preparations of joining the two plugins
+    * Implement the interface via registering our plugin as a “suggestionObserver”
+    * Create method which will be called when receiving new suggestions that searches the map 
+      for the given string and populates the window with corresponding objects
+* Decide how to handle errors and multiple repeat suggestions
+* Figure out how to enable/disable configurations in IDE
+
+Progress this Week:
+* Add an "X" exit button to our suggestions in the window that when clicked removes the suggestion from the window
+* Created hotkey composite objects and config composite objects
+* Integrate Travis CI with our GitHub repo
+* Successfully connected the backend plugin so suggestions now appear in our window when certain actions are taken by the user
+* Began to look into how to remove the binding errors that occur when we run plugin.xml (been there since downloaded HelloWorld example)
+* Made a lot of progress on changing a preference/configuration when the user clicks the checkbox
+* Wrote unit tests for the object classes (Suggestion and Controller objects)
+* Began user testing
+    * Walking through the product with users
+    * Conducting surveys with these participants 
+
+
+Plans and Goals for Next Week:
+* Finish implementing changing a preference on checkbox click
+* Create methods with hardcode suggestions to appear at certain times (not relying on backend) to begin user testing
+* Work with backend team to utilize gradle or maven to build our system
+* Have a passing build upon integration of the backend 
+* Continue user testing with more developed product
+* Make changes to product based on user feedback
+
+Meeting Agenda:
+* Discuss how to make decision on whether to use integration testing or user testing/research
+* Discuss how to represent our user research 
+    * Since we are conducting surveys how to graph and make reproducible for outside viewers
+* Discuss the feasibility of putting our plugin on the eclipse website and how that would change our 
+  user manual for users to download it rather than developers

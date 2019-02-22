@@ -1,41 +1,30 @@
 package helloworld.views;
 
-
-import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.CLabel;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
 import interfaces.FeatureSuggestion;
+import main.java.Controller;
 import main.java.FSObserver;
 import main.java.Suggestion;
 
 public class MainView extends ViewPart {
 	private static final int CONFIG = 0;
-	private static final int HOTKEY = 1;
 	private Composite thisParent;
 	private Display display;
-	private Map<String, Suggestion> suggestionsMap = new HashMap<String, Suggestion>();
 	FeatureSuggestion fs = new FeatureSuggestion();
 	FSObserver obs = new FSObserver(this);
 	
     public MainView() {
         super();
-        suggestionsMap.put("blockCommentSuggestion", new Suggestion("Try using 'CMD + /' to comment several lines.", HOTKEY, true));
-        suggestionsMap.put("addImportStatementsSuggestion", new Suggestion("Try using 'Ctrl + Shift + O' to add import statements.", HOTKEY, true));
-        suggestionsMap.put("removeUnusedImportsStatementSuggestion", new Suggestion("Try using 'Ctrl + Shift + O' to remove unused imports.", HOTKEY, true));
-        suggestionsMap.put("correctIndentationsSuggestion", new Suggestion("Try using 'Ctrl + i' to correct indentation.", HOTKEY, true));
-        suggestionsMap.put("variableRenameRefactorSuggestion", new Suggestion("Try using 'Alt + Shift + R' to rename all instances of a variable, class, or method.", HOTKEY, true));
-        
-        suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("Enable autocomplete", CONFIG, true, false));
     }
     
     @Override
@@ -48,15 +37,34 @@ public class MainView extends ViewPart {
     	rowLayout.pack = true;
     	rowLayout.marginHeight = 0;
     	thisParent.setLayout(rowLayout);
-    	/*
-    	for (Suggestion s: suggestionsMap.values()) {
-    		if (s.type == CONFIG) {
-    			createConfigTip(s);
-    		} else {
-    			createHotkeyTip(s);
-    		}
-    	}
-    	*/
+    	hardCodeConfigs();
+    }
+    
+    // For version 1, we will hard code configuration suggestions to appear
+    public void hardCodeConfigs() {
+    	Controller control = new Controller();
+    	Map<String, Suggestion> suggestionsMap = control.getSuggestionsMap();
+    	
+    	// Disable content assist auto activation so we can suggest it
+    	IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.ui");
+		prefs.put("content_assist_autoactivation", "false");
+		try {
+			prefs.flush(); 
+		} catch (org.osgi.service.prefs.BackingStoreException f) {
+			f.printStackTrace();
+		}
+		
+		// Add content assist auto activation suggestion to the window
+    	Suggestion autocomplete = suggestionsMap.get("enableAutocompleteSuggestion");
+    	addFeature(autocomplete);
+    	
+    	// Add smart semicolon suggestion to the window
+    	Suggestion semicolon = suggestionsMap.get("enableSmartSemicolonSuggestion");
+    	addFeature(semicolon);
+    	
+    	// Add shadow variable warning suggestion to the window
+    	Suggestion shadowVariable = suggestionsMap.get("enableShadowedVariableWarning");
+    	addFeature(shadowVariable);
     }
     
     public void addFeature(Suggestion s) {

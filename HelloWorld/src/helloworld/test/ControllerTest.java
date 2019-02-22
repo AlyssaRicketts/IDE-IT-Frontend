@@ -1,16 +1,29 @@
-package main.java;
+package helloworld.test;
+
+import static org.junit.Assert.assertTrue;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Controller {
+import org.junit.Before;
+import org.junit.Test;
+
+import main.java.Controller;
+import main.java.Suggestion;
+
+public class ControllerTest {
+	private Controller controller;
 	private static final int CONFIG = 0;
 	private static final int HOTKEY = 1;
 	
-	public Map<String, Suggestion> suggestionsMap;
+	@Before
+	public void setUp() throws Exception {
+		controller = new Controller();
+	}
 	
-	public Controller() {
-		suggestionsMap = new HashMap<String, Suggestion>();
+	@Test
+	public void testMap() {
+		Map<String, Suggestion> suggestionsMap = new HashMap<String, Suggestion>();
 		
 		// Hotkeys
         suggestionsMap.put("blockCommentSuggestion", new Suggestion("blockCommentSuggestion", "Try using 'CMD + /' to comment several lines.", HOTKEY, true));
@@ -23,10 +36,7 @@ public class Controller {
         suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("enableAutocompleteSuggestion", "Enable content assist auto activation", CONFIG, true, false));
         suggestionsMap.put("enableSmartSemicolonSuggestion", new Suggestion("enableSmartSemicolonSuggestion", "Enable smart semicolon activation", CONFIG, true, false));
         suggestionsMap.put("enableShadowedVariableWarning", new Suggestion("enableShadowedVariableWarning", "Enable shadowed variable warning", CONFIG, true, false));
+		
+		assertTrue(suggestionsMap.equals(controller.getSuggestionsMap()));
 	}
-	
-	public Map<String, Suggestion> getSuggestionsMap() {
-		return suggestionsMap;
-	}
-
 }
