@@ -3,6 +3,7 @@ package main.java;
 public class Suggestion {
 	// Fields
 	public String displayText;
+	public String id;
 	public int type;
 	public Boolean display;
 	public Boolean enabled;
@@ -10,15 +11,20 @@ public class Suggestion {
 	private static final int CONFIG = 0;
 	private static final int HOTKEY = 1;
 	
-	public Suggestion(String displayText, int type, Boolean display) {
-		this(displayText, type, display, null);
+	public Suggestion(String id, String displayText, int type, Boolean display) {
+		this(id, displayText, type, display, null);
 	}
 	
-	public Suggestion(String displayText, int type, Boolean display, Boolean enabled) {
+	public Suggestion(String id, String displayText, int type, Boolean display, Boolean enabled) {
 		this.displayText = displayText;
 		this.type = type;
 		this.display = display;
 		this.enabled = enabled;
+		this.id = id;
+	}
+	
+	public String getID() {
+		return this.id;
 	}
 	
 	public String getText() {

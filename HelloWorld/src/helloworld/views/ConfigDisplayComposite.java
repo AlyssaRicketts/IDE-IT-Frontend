@@ -19,14 +19,34 @@ public class ConfigDisplayComposite {
 	public ConfigDisplayComposite(final Composite parent, Suggestion s) {
 		final Composite baseComposite = new Composite(parent, SWT.NONE);
 		
+		// Set layout
 		RowLayout rowLayout = new RowLayout();
     	rowLayout.type = SWT.HORIZONTAL;
     	rowLayout.pack = true;
     	baseComposite.setLayout(rowLayout);
     	
+    	// Add checkbox
     	Button checkBox = new Button(baseComposite, SWT.CHECK);
     	checkBox.setText(s.getText());
-    	checkBox.addSelectionListener(new SelectionAdapter() {
+    	
+    	// Add proper event handler for checkbox based on suggestion type
+    	if(s.getID().equals("enableAutocompleteSuggestion")) {
+    		autoActivationCheckbox(checkBox);
+    	}
+    	
+    	// Add exit button
+    	Button exitButton = new Button(baseComposite, SWT.NONE);
+    	exitButton.setText("X");
+    	exitButton.addListener(SWT.Selection, new Listener() {
+  	      public void handleEvent(Event e) {
+  	    	  baseComposite.dispose();
+                parent.requestLayout();
+  	      }
+    	});
+	}
+	
+	public void autoActivationCheckbox(Button checkBox) {
+		checkBox.addSelectionListener(new SelectionAdapter() {
     		@Override
     		public void widgetSelected(SelectionEvent event) {
     			Button btn = (Button) event.getSource();
@@ -52,15 +72,6 @@ public class ConfigDisplayComposite {
     			}
     		}
     	});
-    	
-    	Button exitButton = new Button(baseComposite, SWT.NONE);
-    	exitButton.setText("X");
-    	exitButton.addListener(SWT.Selection, new Listener() {
-  	      public void handleEvent(Event e) {
-  	    	  baseComposite.dispose();
-                parent.requestLayout();
-  	      }
-  	});
 	}
 	
 }
