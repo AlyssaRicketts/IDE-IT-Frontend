@@ -34,6 +34,8 @@ public class ConfigDisplayComposite {
     		autoActivationCheckbox(checkBox);
     	} else if(s.getID().equals("enableSmartSemicolonSuggestion")) {
     		smartSemicolonCheckbox(checkBox);
+    	} else if(s.getID().equals("enableShadowedVariableWarning")) {
+    		shadowVariableWarning(checkBox);
     	}
     	
     	// Add exit button
@@ -105,4 +107,34 @@ public class ConfigDisplayComposite {
     	});
 	}
 	
+	public void shadowVariableWarning(Button checkBox) {
+		checkBox.addSelectionListener(new SelectionAdapter() {
+    		@Override
+    		public void widgetSelected(SelectionEvent event) {
+    			Button btn = (Button) event.getSource();
+    			
+    			if(btn.getSelection()) { // Checked, so shadowed variable warning
+    				IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.core");
+    				prefs.put("org.eclipse.jdt.core.compiler.problem.fieldHiding", "warning");
+    				System.out.println("Checked pref: " + prefs.get("org.eclipse.jdt.core.compiler.problem.fieldHiding", "default"));
+    			
+    				try {
+    					prefs.flush(); 
+    				} catch (org.osgi.service.prefs.BackingStoreException f) {
+    					f.printStackTrace();
+    				}
+    			} else { // Not checked, so disable shadowed variable warning
+    				IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.core");
+    				prefs.put("org.eclipse.jdt.core.compiler.problem.fieldHiding", "ignore");
+    				System.out.println("Unchecked pref: " + prefs.get("org.eclipse.jdt.core.compiler.problem.fieldHiding", "default"));
+    				
+    				try {
+    					prefs.flush(); 
+    				} catch (org.osgi.service.prefs.BackingStoreException f) {
+    					f.printStackTrace();
+    				}
+    			}
+    		}
+    	});
+	}
 }

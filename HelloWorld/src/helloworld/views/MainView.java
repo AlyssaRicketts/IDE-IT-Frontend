@@ -61,6 +61,10 @@ public class MainView extends ViewPart {
     	// Add smart semicolon suggestion to the window
     	Suggestion semicolon = suggestionsMap.get("enableSmartSemicolonSuggestion");
     	addFeature(semicolon);
+    	
+    	// Add shadow variable warning suggestion to the window
+    	Suggestion shadowVariable = suggestionsMap.get("enableShadowedVariableWarning");
+    	addFeature(shadowVariable);
     }
     
     public void addFeature(Suggestion s) {

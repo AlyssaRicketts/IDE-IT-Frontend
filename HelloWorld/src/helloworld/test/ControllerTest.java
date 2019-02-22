@@ -35,6 +35,7 @@ public class ControllerTest {
         // Configurations
         suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("enableAutocompleteSuggestion", "Enable content assist auto activation", CONFIG, true, false));
         suggestionsMap.put("enableSmartSemicolonSuggestion", new Suggestion("enableSmartSemicolonSuggestion", "Enable smart semicolon activation", CONFIG, true, false));
+        suggestionsMap.put("enableShadowedVariableWarning", new Suggestion("enableShadowedVariableWarning", "Enable shadowed variable warning", CONFIG, true, false));
 		
 		assertTrue(suggestionsMap.equals(controller.getSuggestionsMap()));
 	}
