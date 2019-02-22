@@ -55,10 +55,12 @@ public class MainView extends ViewPart {
 		}
 		
 		// Add content assist auto activation suggestion to the window
-    	Suggestion feature = suggestionsMap.get("enableAutocompleteSuggestion");
-    	addFeature(feature);
+    	Suggestion autocomplete = suggestionsMap.get("enableAutocompleteSuggestion");
+    	addFeature(autocomplete);
     	
-    	// 
+    	// Add smart semicolon suggestion to the window
+    	Suggestion semicolon = suggestionsMap.get("enableSmartSemicolonSuggestion");
+    	addFeature(semicolon);
     }
     
     public void addFeature(Suggestion s) {

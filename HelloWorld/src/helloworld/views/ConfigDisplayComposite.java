@@ -32,6 +32,8 @@ public class ConfigDisplayComposite {
     	// Add proper event handler for checkbox based on suggestion type
     	if(s.getID().equals("enableAutocompleteSuggestion")) {
     		autoActivationCheckbox(checkBox);
+    	} else if(s.getID().equals("enableSmartSemicolonSuggestion")) {
+    		smartSemicolonCheckbox(checkBox);
     	}
     	
     	// Add exit button
@@ -64,6 +66,35 @@ public class ConfigDisplayComposite {
     				IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.ui");
     				prefs.put("content_assist_autoactivation", "false");
     			
+    				try {
+    					prefs.flush(); 
+    				} catch (org.osgi.service.prefs.BackingStoreException f) {
+    					f.printStackTrace();
+    				}
+    			}
+    		}
+    	});
+	}
+	
+	public void smartSemicolonCheckbox(Button checkBox) {
+		checkBox.addSelectionListener(new SelectionAdapter() {
+    		@Override
+    		public void widgetSelected(SelectionEvent event) {
+    			Button btn = (Button) event.getSource();
+    			
+    			if(btn.getSelection()) { // Checked, so enable smart semicolon
+    				IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.ui");
+    				prefs.put("smart_semicolon", "true");
+    			
+    				try {
+    					prefs.flush(); 
+    				} catch (org.osgi.service.prefs.BackingStoreException f) {
+    					f.printStackTrace();
+    				}
+    			} else { // Not checked, so disable smart semicolon
+    				IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.ui");
+    				prefs.put("smart_semicolon", "false");
+    				
     				try {
     					prefs.flush(); 
     				} catch (org.osgi.service.prefs.BackingStoreException f) {

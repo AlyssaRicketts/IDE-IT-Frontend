@@ -15,8 +15,8 @@ public class SuggestionTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		hotkey = new Suggestion("Try using 'CMD + /' to comment several lines.", HOTKEY, true);
-		config = new Suggestion("Enable autocomplete", CONFIG, true, false);
+		hotkey = new Suggestion("blockCommentSuggestion", "Try using 'CMD + /' to comment several lines.", HOTKEY, true);
+		config = new Suggestion("enableAutocompleteSuggestion", "Enable autocomplete", CONFIG, true, false);
 	}
 	
 	@Test
