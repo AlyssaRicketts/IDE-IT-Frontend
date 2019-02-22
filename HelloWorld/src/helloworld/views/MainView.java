@@ -2,6 +2,8 @@ package helloworld.views;
 
 import java.util.Map;
 
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -35,12 +37,28 @@ public class MainView extends ViewPart {
     	rowLayout.pack = true;
     	rowLayout.marginHeight = 0;
     	thisParent.setLayout(rowLayout);
-    	
-    	// Temporary hard-code content assist suggestion
+    	hardCodeConfigs();
+    }
+    
+    // For version 1, we will hard code configuration suggestions to appear
+    public void hardCodeConfigs() {
     	Controller control = new Controller();
     	Map<String, Suggestion> suggestionsMap = control.getSuggestionsMap();
+    	
+    	// Disable content assist auto activation so we can suggest it
+    	IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.ui");
+		prefs.put("content_assist_autoactivation", "false");
+		try {
+			prefs.flush(); 
+		} catch (org.osgi.service.prefs.BackingStoreException f) {
+			f.printStackTrace();
+		}
+		
+		// Add content assist auto activation suggestion to the window
     	Suggestion feature = suggestionsMap.get("enableAutocompleteSuggestion");
     	addFeature(feature);
+    	
+    	// 
     }
     
     public void addFeature(Suggestion s) {

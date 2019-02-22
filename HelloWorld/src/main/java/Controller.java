@@ -17,7 +17,7 @@ public class Controller {
         suggestionsMap.put("removeUnusedImportsStatementSuggestion", new Suggestion("Try using 'Ctrl + Shift + O' to remove unused imports.", HOTKEY, true));
         suggestionsMap.put("correctIndentationsSuggestion", new Suggestion("Try using 'Ctrl + i' to correct indentation.", HOTKEY, true));
         suggestionsMap.put("variableRenameRefactorSuggestion", new Suggestion("Try using 'Alt + Shift + R' to rename all instances of a variable, class, or method.", HOTKEY, true));
-        suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("Enable autocomplete", CONFIG, true, false));
+        suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("Enable content assist auto activation", CONFIG, true, false));
 	}
 	
 	public Map<String, Suggestion> getSuggestionsMap() {
