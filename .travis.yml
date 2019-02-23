@@ -1,5 +1,5 @@
 language: java
-before_install: cd HelloWorld
+before_install: cd IDE-IT-Frontend
 script: 
 - ant build
 - ant test
