@@ -1,4 +1,4 @@
-package helloworld.test;
+package test.java;
 
 import static org.junit.Assert.assertTrue;
 

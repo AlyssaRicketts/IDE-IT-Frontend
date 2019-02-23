@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: HelloWorld
-Bundle-SymbolicName: HelloWorld;singleton:=true
+Bundle-Name: IDE-IT-Frontend
+Bundle-SymbolicName: IDE-IT-Frontend;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime;bundle-version="3.15.100",
  backend_plugin;bundle-version="1.0.0"
-Automatic-Module-Name: HelloWorld
+Automatic-Module-Name: IDE-IT-Frontend
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

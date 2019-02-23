@@ -2,7 +2,7 @@ package main.java;
 
 import java.util.Map;
 
-import helloworld.views.MainView;
+import plugin.views.MainView;
 import interfaces.FeatureSuggestionObserver;
 
 public class FSObserver extends FeatureSuggestionObserver {
