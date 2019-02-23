@@ -1,4 +1,4 @@
-package helloworld.views;
+package plugin.views;
 
 import java.util.Map;
 

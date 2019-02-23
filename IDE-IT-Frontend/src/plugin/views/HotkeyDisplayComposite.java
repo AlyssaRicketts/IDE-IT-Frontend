@@ -1,4 +1,4 @@
-package helloworld.views;
+package plugin.views;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;

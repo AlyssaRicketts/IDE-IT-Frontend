@@ -1,4 +1,4 @@
-package helloworld.views;
+package plugin.views;
 
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
