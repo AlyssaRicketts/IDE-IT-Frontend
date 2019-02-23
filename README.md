@@ -41,7 +41,7 @@ This section provides the instruction for installing IDE-IT Frontend.
 ### 2.2 Build and Open in Eclipse
 
 1. Clone this repository to your local machine
-2. Navigate into the **HelloWorld** folder within the cloned IDE-IT-Frontend folder
+2. Navigate into the **IDE-IT-Frontend** folder within the cloned IDE-IT-Frontend folder
 3. Build the plugin locally using ant:
 
     `ant build`
@@ -61,7 +61,7 @@ If the IDE-IT window does not appear right away, it can be made visible by going
 
 To use this plugin first make sure the IDE-IT window is visible in your IDE, if it is not visible finish the steps in Installation above. Once the window is visible, just begin working on your project. The window will update based on patterns in your keystrokes with hotkey tips and features you might want to enable or disable.
 
-![](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/HelloWorld/icons/GUI.png)
+![](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/icons/GUI.png)
 Figure 1: Mockup of IDE-IT user interface window within an Eclipse workspace.
     
 ### 3.1 Window Appearance    
@@ -88,9 +88,9 @@ This plugin requires a back-end service that tracks document changes within the 
 
 The front-end depends on a [FeatureSuggestionObserver](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionObserver.java) abstract class and a [FeatureSuggestionInterface](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionInterface.java) abstract class. You should include these abstract classes within your project when you implement your own observers. You must implement a FeatureSuggestion class which extends [FeatureSuggestionInterface](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionInterface.java). This class should call the notify function in the [FeatureSuggestionObserver](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionObserver.java) class to send the feature ID that uniquely identifies each Eclipse feature to the front-end.
 
-If the feature suggestions you implement are included within the [current features](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt), you should use the same feature IDs as listed in [this file](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt). To add additional features, add the unique feature ID along with the [Suggestion](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/HelloWorld/src/main/java/Suggestion.java) into the suggestions map in the [Controller](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/HelloWorld/src/main/java/Controller.java). For adding configurations specifically, there will need to be additional implementation to enable or disable the specified configuration.
+If the feature suggestions you implement are included within the [current features](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt), you should use the same feature IDs as listed in [this file](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt). To add additional features, add the unique feature ID along with the [Suggestion](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/main/java/Suggestion.java) into the suggestions map in the [Controller](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/main/java/Controller.java). For adding configurations specifically, there will need to be additional implementation to enable or disable the specified configuration.
 
-To connect your plugin, export your project as a jar file named as 'backend_plugin.jar' and place the jar file in the IDE-IT-Frontend/HelloWorld/lib folder. This will include your plugin as a dependency, so the project can be built and run.
+To connect your plugin, export your project as a jar file named as 'backend_plugin.jar' and place the jar file in the IDE-IT-Frontend/IDE-IT-Frontend/lib folder. This will include your plugin as a dependency, so the project can be built and run.
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
