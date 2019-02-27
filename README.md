@@ -23,3 +23,14 @@ Clone THIS BRANCH of the frontend repository, and the [frontend release](https:/
 After properly installing the SWTBot into your Eclipse IDE, open the **src -> test -> java** folder from within the frontend repository that you cloned. Here, you will see a **UserInterfaceTester** file. Right click on it, hover over **Run as**, and select **SWTBot Test**. You should now not touch your machine until the tests have completed running, as any user input can interrupt the simulation. You will see a new Eclipse workspace launch, the IDE-IT window become opened, all checkboxes become selected, and the window then close. When it returns to your original workspace, you should now see a green line in your **JUnit** window, with 0 errors and 0 failures. If this is not the case, please submit a bug report.
 
 <sup>[back to top](#ide-it-frontend)</sup>
+
+## 4 Reporting Bugs
+
+If you find any bugs in our plugin, please submit an issue to our GitHub page: https://github.com/AlyssaRicketts/IDE-IT-Frontend/issues with the following information:
+
+- Eclipse Version located by going to **Eclipse | About Eclipse**.
+- A brief description of the bug.
+- Specific steps to recreate the bug.
+- (Optional) A screen shot of the bug.
+
+<sup>[back to top](#ide-it-frontend)</sup>
