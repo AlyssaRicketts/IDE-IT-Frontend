@@ -104,3 +104,9 @@ If you find any bugs in our plugin, please submit an issue to our GitHub page: h
 - (Optional) A screen shot of the bug.
 
 <sup>[back to top](#ide-it-frontend)</sup>
+
+## 6 Reproducing User Tests
+
+Our method of user testing is described in detail in our project report which can be found in the most recently updated folder in our reports folder. If you are interested in reproducing our user tests the process is rather simple. Follow the above instructions on cloning and starting up the plugin and find participants within your target group to test the plugin. Then provide them with the following link which will take them to the survey we provided to our users: https://goo.gl/forms/TeKRrIywe8EfxUWr1. However, this link would send our team the results from the survey so if you are interested in analyzing the results yourself you would need to make a new google form following the same format as our survey and then provide your participants with that link instead. By doing this you will be able to sign into your google account and view the results of the survey. In the results section you are able to view each individual survey that has been submitted as well as graphs representing all of the data from the submitted surveys. 
+
+<sup>[back to top](#ide-it-frontend)</sup>
