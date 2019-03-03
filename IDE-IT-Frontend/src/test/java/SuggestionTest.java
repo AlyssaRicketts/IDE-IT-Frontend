@@ -16,7 +16,7 @@ public class SuggestionTest {
 	@Before
 	public void setUp() throws Exception {
 		hotkey = new Suggestion("blockCommentSuggestion", "Try using 'CMD + /' to comment several lines.", HOTKEY, true);
-		config = new Suggestion("enableAutocompleteSuggestion", "Enable autocomplete", CONFIG, true);
+		config = new Suggestion("enableAutocompleteSuggestion", "Enable autocomplete", CONFIG, true, false);
 	}
 	
 	@Test
@@ -47,6 +47,16 @@ public class SuggestionTest {
 	@Test
 	public void testConfigDisplay() {
 		assertEquals(true, config.getDisplay());
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testHotkeyEnabled() {
+		hotkey.getEnabled();
+	}
+	
+	@Test
+	public void testConfigEnabled() {
+		assertEquals(false, config.getEnabled());
 	}
 	
 	@Test
@@ -88,5 +98,16 @@ public class SuggestionTest {
 	public void testConfigSetDisplay() {
 		config.setDisplay(false);
 		assertEquals(false, config.getDisplay());
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testHotkeySetEnabled() {
+		hotkey.setEnabled(false);
+	}
+	
+	@Test
+	public void testConfigSetEnabled() {
+		config.setEnabled(false);
+		assertEquals(false, config.getEnabled());
 	}
 }

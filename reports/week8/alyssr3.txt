@@ -1,22 +1,0 @@
-1. Last Week’s Goals	a. Finish implementing changing a preference on checkbox click
-	b. Create methods which hardcode suggestions to appear at certain times (not relying on backend) to begin user testing
-	c. Work with backend team utilize gradle or maven to build our system2. Progress This Week
-	a. Finished implementing changing preference on checkbox click
-		i. Content assist autoactivation
-		ii. Smart semicolon
-		iii. Shadowed variable compiler warning
-	b. Created methods for config suggestions to appear upon startup
-	c. Created class for getting the operating system information
-	d. Updated Controller method so it populates map with proper suggestions based on operating system
-	e. Created a version of our plugin which depends on SWTBot, and utilized SWTBot to write integration tests
-	f. Wrote customer feedback for FootPrint Proj5
-	g. Updated backend_release branch so backend team can utilize our build 
-	f. Added the configuration suggestions that we support to list of features for backend team
-	g. Add instructions to the repo for reproducing integration test results
-	h. Recruit some users and perform user testing
-3. Plans and Goals for Next Week
-	a. Meet with backend team and determine what other functionalities they plan to support in the next two weeks
-	b. Perform more user testing
-	c. Fix up formatting
-	d. Code cleanup
-	e. Write more integration and unit tests
