@@ -19,79 +19,25 @@
 
 ## 1 Introduction
 
-### 1.1 Motivation
-
-The Eclipse IDE provides helpful user interfaces and features for authoring, modifying, compiling, deploying, and debugging software. However, due to low accessibility and awareness of these tools and features, only a small number of these powerful IDE functionalities get used. Additionally, many developers find that many tools in their IDEs are not trivial to configure, and this prevents them from using the tool at all. The aim of the Integrated Development Environment - Intelligent Tutorials (IDE-IT) is to improve the discoverability of existing IDE tools and shortcuts, by providing developers non-invasive suggestions on Eclipse features that they may not be aware of. The suggestions take the form of hotkey tips and easy enabling/disabling of configuration settings. The hotkey suggestions are shown when the user is continually performing tasks manually that could be done with a hotkey and the enable/disable features appear periodically with configuration settings that other developers have found to be extremely useful but many are unaware of their locations within the menu or of their existence.
-
-### 1.2 IDE-IT Frontend
-
-This repository / plugin is specifically for the frontend service of IDE-IT. This is not designed to be a standalone plugin. It requires a the use of a backend service that tracks user action such as document changes, key presses, and mouse clicks, and then performs the evaluation of which hotkeys and configurations to suggest. We recommend the IDE-IT backend plugin, located at https://github.com/DavidThien/IDE-IT, as this framework is built specifically for IDE-IT. If you would like to use your own custom backend framework, see [below](#4-api-to-register-other-backends) on how to incorporate our service to your own plugin.
+If you are a user or developer inspecting this branch of the IDE-IT Frontend repository, then you are likely interested in running the integration tests for the plugin as a whole. The motivation behind this is to expose faults in the interaction between integrated units, and/or ensure that the independent units work correctly when connected to each other. Specifically, these integration tests ensure that the interaction between the backend and frontend plugins are successful and work as expected. These integration tests are performed using an SWTBot: an open-source Java based UI/functional testing tool for testing SWT, Eclipse, and GEF based applications. The SWT bot simulates a user, such that it asserts expected functionality upon various user inputs. To reproduce these tests, one must not only have the prerequisites for the frontend plugin, but additionally the proposed backend plugin, as well as an SWTBot. See [prerequisites](#2-Prerequisites) for more information.
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
-## 2 Installation
-
-This section provides the instruction for installing IDE-IT Frontend.
-
-### 2.1 Prerequisites
+## 2 Prerequisites
 
 1. Java JDK version 1.8.0 or higher. See [Oracle Java Downloads](https://www.oracle.com/technetwork/java/javase/downloads/index.html) for more.
 2. Apache Ant version 1.10.5 or higher. See [Apache Ant Binary Distributions](https://ant.apache.org/bindownload.cgi) for more.
 3. Eclipse IDE version 2018-12 or higher. See [Eclipse IDE Downloads](https://www.eclipse.org/eclipseide/) for more.
+4. Eclipse SWTBot version 2.8.0 or higher. Ensure that your run configurations are properly set. See [Eclipse SWTBot](https://www.eclipse.org/swtbot/) for more.
+5. The recommended back-end service for this plugin, found at [IDE-IT back-end plugin](https://github.com/DavidThien/IDE-IT).
 
-### 2.2 Build and Open in Eclipse
-
-1. Clone this repository to your local machine
-2. Navigate into the **IDE-IT-Frontend** folder within the cloned IDE-IT-Frontend folder
-3. Build the plugin locally using ant:
-
-    `ant build`
-    
-4. Open Eclipse
-5. From the menu choose: **Help | Install New Software**
-6. Click the **Add** button
-7. In the **Add Repository** dialog that appears, click the **Archive** button next to the **Location** field
-8. Select your plugin file, click **OK**
-9. Restart Eclipse
-
-If the IDE-IT window does not appear right away, it can be made visible by going to the **Window** drop down menu. From here, select **Show View**, and then choose the **Other** option. From the list of folders that appears, under the **IDE-IT Plug-in** folder, select the **IDE-IT** option. Then, click **Open**.
+Clone THIS BRANCH of the frontend repository, and the [frontend release](https://github.com/DavidThien/IDE-IT/tree/frontend_release) branch of the backend repository to your local machine. Follow the instructions found on the respective repository's README.md to build and open the plugins in eclipse. 
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
-## 3 Using IDE-IT Frontend
+## 3 Running Integration Tests
 
-To use this plugin first make sure the IDE-IT window is visible in your IDE, if it is not visible finish the steps in Installation above. Once the window is visible, just begin working on your project. The window will update based on patterns in your keystrokes with hotkey tips and features you might want to enable or disable.
-
-![](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/icons/GUI.png)
-Figure 1: Mockup of IDE-IT user interface window within an Eclipse workspace.
-    
-### 3.1 Window Appearance    
-
-Tool enable/disable suggestions appear with a checkbox next to a text description of the tool. Hotkey tips appear with a lightbulb icon next to a text description of the hotkey/shortcut.
-
-### 3.2 Enabling/Disabling Suggested Configurations
-
-Simply check or uncheck the box next to the tool you would like to enable or disable.
-    
-### 3.3 Using Suggested Hotkeys
-
-Next to the lightbulb icons will be suggested hotkeys, these are keyboard shortcuts that might make your coding experience easier and quicker.
-    
-### 3.4 Removing Unwanted Suggestions
-
-If you do not wish to see a hotkey tip or are not interested in an enable/disable feature, simply click the "X" on the right side of that tip or tool and it will not show up again.
-
-<sup>[back to top](#ide-it-frontend)</sup>
-
-## 4 API to Register Other Backends
-
-This plugin requires a back-end service that tracks document changes within the Eclipse IDE to provide a list of feature suggestions to this plugin. The recommended back-end service for this plugin is the [IDE-IT back-end plugin](https://github.com/DavidThien/IDE-IT). If you would like to use a different back-end service, please continue reading.
-
-The front-end depends on a [FeatureSuggestionObserver](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionObserver.java) abstract class and a [FeatureSuggestionInterface](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionInterface.java) abstract class. You should include these abstract classes within your project when you implement your own observers. You must implement a FeatureSuggestion class which extends [FeatureSuggestionInterface](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionInterface.java). This class should call the notify function in the [FeatureSuggestionObserver](https://github.com/DavidThien/IDE-IT/blob/master/backend_plugin/src/interfaces/FeatureSuggestionObserver.java) class to send the feature ID that uniquely identifies each Eclipse feature to the front-end.
-
-If the feature suggestions you implement are included within the [current features](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt), you should use the same feature IDs as listed in [this file](https://github.com/DavidThien/IDE-IT/blob/master/featureIDStrings.txt). To add additional features, add the unique feature ID along with the [Suggestion](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/main/java/Suggestion.java) into the suggestions map in the [Controller](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/main/java/Controller.java). For adding configurations specifically, there will need to be additional implementation to enable or disable the specified configuration.
-
-To connect your plugin, export your project as a jar file named as 'backend_plugin.jar' and place the jar file in the IDE-IT-Frontend/IDE-IT-Frontend/lib folder. This will include your plugin as a dependency, so the project can be built and run.
+After properly installing the SWTBot into your Eclipse IDE, open the **src -> test -> java** folder from within the frontend repository that you cloned. Here, you will see a **UserInterfaceTester** file. Right click on it, hover over **Run as**, and select **SWTBot Test**. You should now not touch your machine until the tests have completed running, as any user input can interrupt the simulation. You will see a new Eclipse workspace launch, the IDE-IT window become opened, all checkboxes become selected, and the window then close. When it returns to your original workspace, you should now see a green line in your **JUnit** window, with 0 errors and 0 failures. If this is not the case, please submit a bug report.
 
 <sup>[back to top](#ide-it-frontend)</sup>
 
