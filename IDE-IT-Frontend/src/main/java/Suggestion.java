@@ -6,15 +6,20 @@ public class Suggestion {
 	public String id;
 	public int type;
 	public Boolean display;
+	public Boolean enabled;
 	
 	private static final int CONFIG = 0;
 	private static final int HOTKEY = 1;
-
 	
 	public Suggestion(String id, String displayText, int type, Boolean display) {
+		this(id, displayText, type, display, null);
+	}
+	
+	public Suggestion(String id, String displayText, int type, Boolean display, Boolean enabled) {
 		this.displayText = displayText;
 		this.type = type;
 		this.display = display;
+		this.enabled = enabled;
 		this.id = id;
 	}
 	
@@ -34,6 +39,13 @@ public class Suggestion {
 		return this.display;
 	}
 	
+	public Boolean getEnabled() {
+		if (this.type == HOTKEY) {
+			throw new IllegalArgumentException("Hotkeys cannot be enabled or disabled");
+		}
+		return this.enabled;
+	}
+	
 	public void setText(String text) {
 		this.displayText = text;
 	}
@@ -49,6 +61,13 @@ public class Suggestion {
 		this.display = disp;
 	}
 	
+	public void setEnabled(Boolean enabled) {
+		if (this.type == HOTKEY) {
+			throw new IllegalArgumentException("Hotkeys cannot be enabled or disabled");
+		}
+		this.enabled = enabled;
+	}
+	
 	@Override
 	public boolean equals(Object other) {
 		if (!(other instanceof Suggestion)) {
@@ -56,6 +75,6 @@ public class Suggestion {
 		}
 		Suggestion compared = (Suggestion) other;
 		return this.displayText.equals(compared.displayText) && this.type == compared.type
-				&& this.display == compared.display;
+				&& this.display == compared.display && this.enabled == compared.enabled;
 	}
 }
