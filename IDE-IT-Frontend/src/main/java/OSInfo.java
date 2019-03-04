@@ -4,12 +4,12 @@ public class OSInfo {
    private static String OS = null;
    
    public static String getOSName() {
-      if(OS == null) { OS = System.getProperty("os.name").toLowerCase(); }
+      if (OS == null) { OS = System.getProperty("os.name").toLowerCase(); }
       return OS;
    }
    
    public static boolean isWindows() {
-      return (getOSName().indexOf("win") >= 0);
+	   return (getOSName().indexOf("win") >= 0);
    }
 
    public static boolean isUnix() {
