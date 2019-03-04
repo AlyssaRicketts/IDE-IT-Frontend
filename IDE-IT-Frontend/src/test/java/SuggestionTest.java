@@ -40,6 +40,18 @@ public class SuggestionTest {
 	}
 	
 	@Test
+	public void testIncreaseCount() {
+		hotkey.increaseCount();
+		assertEquals(1, hotkey.counter);
+	}
+	
+	@Test
+	public void testGetCount() {
+		hotkey.increaseCount();
+		assertEquals(1, hotkey.getCount());
+	}
+	
+	@Test
 	public void testHotkeyDisplay() {
 		assertEquals(true, hotkey.getDisplay());
 	}
