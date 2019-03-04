@@ -27,7 +27,7 @@ public class ControllerTest {
 		Map<String, Suggestion> suggestionsMap = new HashMap<String, Suggestion>();
 		
 		// Hotkeys that vary between operating systems
-		if(OSInfo.isMac() || OSInfo.isUnix() ) {
+		if (OSInfo.isMac() || OSInfo.isUnix() ) {
 	        suggestionsMap.put("blockCommentSuggestion", new Suggestion("blockCommentSuggestion", "Try using 'CMD + /' to comment several lines.", HOTKEY, true));
 	        suggestionsMap.put("variableRenameRefactorSuggestion", new Suggestion("variableRenameRefactorSuggestion", "Try using 'CMD + OPTION + R' to rename all instances of a variable, class, or method.", HOTKEY, true));
 		} else {  // Windows
@@ -41,9 +41,9 @@ public class ControllerTest {
         suggestionsMap.put("correctIndentationsSuggestion", new Suggestion("correctIndentationsSuggestion", "Try using 'CTRL + I' to correct indentation.", HOTKEY, true));
 		
         // Configurations
-        suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("enableAutocompleteSuggestion", "Enable content assist auto activation", CONFIG, true, false));
-        suggestionsMap.put("enableSmartSemicolonSuggestion", new Suggestion("enableSmartSemicolonSuggestion", "Enable smart semicolon activation", CONFIG, true, false));
-        suggestionsMap.put("enableShadowedVariableWarning", new Suggestion("enableShadowedVariableWarning", "Enable shadowed variable warning", CONFIG, true, false));
+        suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("enableAutocompleteSuggestion", "Enable content assist auto activation", CONFIG, true));
+        suggestionsMap.put("enableSmartSemicolonSuggestion", new Suggestion("enableSmartSemicolonSuggestion", "Enable smart semicolon activation", CONFIG, true));
+        suggestionsMap.put("enableShadowedVariableWarning", new Suggestion("enableShadowedVariableWarning", "Enable shadowed variable warning", CONFIG, true));
 		
 		assertTrue(suggestionsMap.equals(controller.getSuggestionsMap()));
 	}

@@ -1,26 +1,19 @@
 package main.java;
 
 public class Suggestion {
-	// Fields
-	public String displayText;
-	public String id;
-	public int type;
-	public Boolean display;
-	public Boolean enabled;
-	public int counter;
+	public String displayText;	// text displayed in window
+	public String id;			// unique feature name
+	public int type;			// 0 for CONFIG, 1 for HOTKEY
+	public Boolean display;		// display if true, otherwise do not display in window
+	public int counter;			// number of times Suggestion has been displayed
 	
 	private static final int CONFIG = 0;
 	private static final int HOTKEY = 1;
 	
 	public Suggestion(String id, String displayText, int type, Boolean display) {
-		this(id, displayText, type, display, null);
-	}
-	
-	public Suggestion(String id, String displayText, int type, Boolean display, Boolean enabled) {
 		this.displayText = displayText;
 		this.type = type;
 		this.display = display;
-		this.enabled = enabled;
 		this.id = id;
 	}
 	
@@ -48,13 +41,6 @@ public class Suggestion {
 		return this.display;
 	}
 	
-	public Boolean getEnabled() {
-		if (this.type == HOTKEY) {
-			throw new IllegalArgumentException("Hotkeys cannot be enabled or disabled");
-		}
-		return this.enabled;
-	}
-	
 	public void setText(String text) {
 		this.displayText = text;
 	}
@@ -70,13 +56,6 @@ public class Suggestion {
 		this.display = disp;
 	}
 	
-	public void setEnabled(Boolean enabled) {
-		if (this.type == HOTKEY) {
-			throw new IllegalArgumentException("Hotkeys cannot be enabled or disabled");
-		}
-		this.enabled = enabled;
-	}
-	
 	@Override
 	public boolean equals(Object other) {
 		if (!(other instanceof Suggestion)) {
@@ -84,6 +63,6 @@ public class Suggestion {
 		}
 		Suggestion compared = (Suggestion) other;
 		return this.displayText.equals(compared.displayText) && this.type == compared.type
-				&& this.display == compared.display && this.enabled == compared.enabled;
+				&& this.display == compared.display;
 	}
 }
