@@ -1,0 +1,16 @@
+1. Last Week’s Goals	a. Meet with backend team and determine what other functionalities they plan to support in the next two weeks
+	b. Perform more user testing
+	c. Fix up formatting
+	d. Code cleanup
+	e. Write more integration and unit tests2. Progress This Week
+	a. Review FootPrint team Proj6 and provide customer feedback
+	b. Remove "enable" field in suggestion object
+	c. Recruit users and perform user testing
+	d. Add more integration tests (get swtbot to create new class and multiline comment
+	e. Update draft final report, adding appendix and discussion section
+3. Plans and Goals for Next Week
+	a. Continue integration tests - chat with BE team about my current multiline comment test and why the bot changes are not detected by their algorithm
+	b. Add "remove blank space at end of line" configuration suggestion
+	c. Document how a user could add their own configuration suggestions
+	d. Look into adding to Eclipse marketplace
+	
