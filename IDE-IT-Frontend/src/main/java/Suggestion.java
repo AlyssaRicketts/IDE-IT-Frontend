@@ -7,6 +7,7 @@ public class Suggestion {
 	public int type;
 	public Boolean display;
 	public Boolean enabled;
+	public int counter;
 	
 	private static final int CONFIG = 0;
 	private static final int HOTKEY = 1;
@@ -33,6 +34,14 @@ public class Suggestion {
 	
 	public int getType() {
 		return this.type;
+	}
+	
+	public void increaseCount() {
+		this.counter++;
+	}
+	
+	public int getCount() {
+		return this.counter;
 	}
 	
 	public Boolean getDisplay() {

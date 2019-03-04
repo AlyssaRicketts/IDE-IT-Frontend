@@ -30,7 +30,7 @@ public class ConfigDisplayComposite {
     	checkBox.setText(s.getText());
     	
     	// Add proper event handler for checkbox based on suggestion type
-    	if(s.getID().equals("enableAutocompleteSuggestion")) {
+    	if (s.getID().equals("enableAutocompleteSuggestion")) {
     		autoActivationCheckbox(checkBox);
     	} else if(s.getID().equals("enableSmartSemicolonSuggestion")) {
     		smartSemicolonCheckbox(checkBox);
@@ -44,7 +44,7 @@ public class ConfigDisplayComposite {
     	exitButton.addListener(SWT.Selection, new Listener() {
   	      public void handleEvent(Event e) {
   	    	  baseComposite.dispose();
-                parent.requestLayout();
+  	    	  parent.requestLayout();
   	      }
     	});
 	}

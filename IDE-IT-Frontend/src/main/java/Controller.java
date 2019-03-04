@@ -13,7 +13,7 @@ public class Controller {
 		suggestionsMap = new HashMap<String, Suggestion>();
 		
 		// Hotkeys that vary between operating systems
-		if(OSInfo.isMac() || OSInfo.isUnix() ) {
+		if (OSInfo.isMac() || OSInfo.isUnix() ) {
 	        suggestionsMap.put("blockCommentSuggestion", new Suggestion("blockCommentSuggestion", "Try using 'CMD + /' to comment several lines.", HOTKEY, true));
 	        suggestionsMap.put("variableRenameRefactorSuggestion", new Suggestion("variableRenameRefactorSuggestion", "Try using 'CMD + OPTION + R' to rename all instances of a variable, class, or method.", HOTKEY, true));
 		} else {  // Windows

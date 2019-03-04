@@ -33,6 +33,7 @@ public class HotkeyDisplayComposite {
     	      public void handleEvent(Event e) {
     	    	  baseComposite.dispose();
                   parent.requestLayout();
+                  s.setDisplay(true);
     	      }
     	});
 	}

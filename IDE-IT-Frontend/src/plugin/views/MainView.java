@@ -18,6 +18,7 @@ import main.java.Suggestion;
 
 public class MainView extends ViewPart {
 	private static final int CONFIG = 0;
+	private static final int HOTKEY = 1;
 	private Composite thisParent;
 	private Display display;
 	FeatureSuggestion fs = new FeatureSuggestion();
@@ -68,11 +69,13 @@ public class MainView extends ViewPart {
     }
     
     public void addFeature(Suggestion s) {
-    	if (s.getType() == CONFIG) {
-			createConfigTip(s);
-		} else {
-			createHotkeyTip(s);
-		}
+    	if (s.getType() == HOTKEY && s.getDisplay() && s.getCount() < 3) {
+    		s.increaseCount();
+    		s.setDisplay(false);
+    		createHotkeyTip(s);
+    	} else if (s.getType() == CONFIG) {
+    		createConfigTip(s);
+    	}
     	thisParent.requestLayout();
     }
 
