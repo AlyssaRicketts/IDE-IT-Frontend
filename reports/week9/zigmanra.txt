@@ -1,0 +1,24 @@
+Individual Status Report 5
+IDE-IT Frontend: Rachel Zigman
+
+Plans and Goals from Last Week:
+-	Continue user testing
+    o	Make changes to product based on user feedback
+-	Continue to fix formatting
+-	Add any additional features the backend adds support for
+-	Work on finalizing our report
+
+Progress from this Week:
+This week I worked on formatting. Currently, I have a scrollable window but am 
+working through having our suggestions appear in it – will work on fixing this 
+bug this week. I also worked on editing the slides for the most recent presentation. 
+I also fixed the bug that we were having with duplicate suggestions (however Puja 
+went back and cleaned up the code for this fix). I also worked on editing the report 
+to represent the most recent feedback.
+
+Plans and Goals for Next Week:
+-	Continue to perform more user testing
+    o	Make changes to product based on user feedback
+-	Continue to fix formatting
+-	 Add any additional features the backend adds support for
+-	Work on finalizing our report
