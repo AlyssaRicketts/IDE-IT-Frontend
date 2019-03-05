@@ -108,10 +108,17 @@ public class UserInterfaceTester {
 		editor.save();
 		
 		// Comment out two lines
-		editor.insertText(3, 2, "//");
+		/*editor.insertText(3, 2, "//");
 		editor.save();
+		bot.sleep(200);
 		editor.insertText(4, 2, "//");
-		editor.save();
+		editor.save();*/
+		
+		editor.navigateTo(3, 2);
+		editor.typeText("//");
+		
+		
+		bot.sleep(5000);
 	}
     
     
