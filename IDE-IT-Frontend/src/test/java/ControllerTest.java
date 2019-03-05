@@ -37,7 +37,7 @@ public class ControllerTest {
 
 		// Hotkeys that remain the same between operating systems
 		suggestionsMap.put("addImportStatementsSuggestion", new Suggestion("addImportStatementsSuggestion", "Try using 'CTRL + SHIFT + O' to add import statements.", HOTKEY, true));
-		suggestionsMap.put("removeUnusedImportsStatementSuggestion", new Suggestion("removeUnusedImportsStatementSuggestion", "Try using 'CTRL + SHIFT + O' to remove unused imports.", HOTKEY, true));
+		suggestionsMap.put("removeUnusedImportStatementsSuggestion", new Suggestion("removeUnusedImportStatementsSuggestion", "Try using 'CTRL + SHIFT + O' to remove unused imports.", HOTKEY, true));
 		suggestionsMap.put("correctIndentationsSuggestion", new Suggestion("correctIndentationsSuggestion", "Try using 'CTRL + I' to correct indentation.", HOTKEY, true));
 
 		// Configurations
