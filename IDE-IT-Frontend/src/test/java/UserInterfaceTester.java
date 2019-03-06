@@ -11,12 +11,14 @@ import org.eclipse.swtbot.eclipse.finder.SWTWorkbenchBot;
 import org.eclipse.swtbot.eclipse.finder.widgets.SWTBotEclipseEditor;
 import org.eclipse.swtbot.eclipse.finder.widgets.SWTBotEditor;
 import org.eclipse.swtbot.eclipse.finder.widgets.SWTBotView;
+import org.eclipse.swtbot.swt.finder.SWTBotAssert;
 import org.eclipse.swtbot.swt.finder.junit.SWTBotJunit4ClassRunner;
 import org.eclipse.swtbot.swt.finder.utils.FileUtils;
 import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 import org.eclipse.swtbot.swt.finder.waits.Conditions;
 import org.eclipse.swtbot.swt.finder.waits.DefaultCondition;
 import org.eclipse.swtbot.swt.finder.waits.ICondition;
+import org.eclipse.swtbot.swt.finder.widgets.SWTBotCLabel;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotShell;
 import org.eclipse.swtbot.swt.finder.widgets.SWTBotText;
 import org.eclipse.ui.IWorkbench;
@@ -30,6 +32,7 @@ import org.junit.runner.RunWith;
 import org.osgi.framework.Bundle;
 
 import main.activation.Activator;
+import plugin.views.HotkeyDisplayComposite;
 
 @RunWith(SWTBotJunit4ClassRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -97,36 +100,25 @@ public class UserInterfaceTester {
 	public void test5_testMultilineComment() throws Exception {
 		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
 		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
-		//SWTBotPreferences.KEYBOARD_LAYOUT = "MAC_EN_US";
 		
 		editor.setText("public class HelloWorld {\n\n" +
-
 		    "\tpublic static void main(String[] args) {\n" +
 		        "\t\tSystem.out.println(\"Hello\");\n" +
 				"\t\tSystem.out.println(\"World\");\n" +
 		    "\t}\n\n" +
-
 			"}");
-		editor.save();
 		
-		// Comment out two lines
-		/*editor.insertText(3, 2, "//");
 		editor.save();
-		bot.sleep(200);
-		editor.insertText(4, 2, "//");
-		editor.save();*/
-		
 		editor.typeText(3, 2, "//");
 		bot.sleep(200);
 		editor.typeText(4, 2, "//");
+		bot.sleep(200);
 		
-		
-		bot.sleep(5000);
+		SWTBotCLabel clabelBot = bot.clabel("Try using 'CMD + /' to comment several lines.");
+		SWTBotAssert.assertVisible(clabelBot);
 	}
     
-    
-    
-    
+     
 
     
     private static void openJavaPerspective() throws InterruptedException {
