@@ -11,7 +11,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
-import interfaces.FeatureSuggestion;
+import main.interfaces.FeatureSuggestion;
 import main.java.Controller;
 import main.java.FSObserver;
 import main.java.Suggestion;
@@ -31,6 +31,7 @@ public class MainView extends ViewPart {
     public void createPartControl(Composite parent) {
     	thisParent = parent;
     	fs.registerObserver(obs);
+    	fs.start();
     	display = PlatformUI.getWorkbench().getDisplay();
     	RowLayout rowLayout = new RowLayout();
     	rowLayout.type = SWT.VERTICAL;

@@ -13,6 +13,7 @@ import org.eclipse.swtbot.eclipse.finder.widgets.SWTBotEditor;
 import org.eclipse.swtbot.eclipse.finder.widgets.SWTBotView;
 import org.eclipse.swtbot.swt.finder.junit.SWTBotJunit4ClassRunner;
 import org.eclipse.swtbot.swt.finder.utils.FileUtils;
+import org.eclipse.swtbot.swt.finder.utils.SWTBotPreferences;
 import org.eclipse.swtbot.swt.finder.waits.Conditions;
 import org.eclipse.swtbot.swt.finder.waits.DefaultCondition;
 import org.eclipse.swtbot.swt.finder.waits.ICondition;
@@ -28,7 +29,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.osgi.framework.Bundle;
 
-import activation.Activator;
+import main.activation.Activator;
 
 @RunWith(SWTBotJunit4ClassRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -95,7 +96,8 @@ public class UserInterfaceTester {
     @Test
 	public void test5_testMultilineComment() throws Exception {
 		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
-		
+		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
+		//SWTBotPreferences.KEYBOARD_LAYOUT = "MAC_EN_US";
 		
 		editor.setText("public class HelloWorld {\n\n" +
 
@@ -114,8 +116,9 @@ public class UserInterfaceTester {
 		editor.insertText(4, 2, "//");
 		editor.save();*/
 		
-		editor.navigateTo(3, 2);
-		editor.typeText("//");
+		editor.typeText(3, 2, "//");
+		bot.sleep(200);
+		editor.typeText(4, 2, "//");
 		
 		
 		bot.sleep(5000);

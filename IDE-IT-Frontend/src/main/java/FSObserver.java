@@ -3,7 +3,7 @@ package main.java;
 import java.util.Map;
 
 import plugin.views.MainView;
-import interfaces.FeatureSuggestionObserver;
+import main.interfaces.FeatureSuggestionObserver;
 
 public class FSObserver extends FeatureSuggestionObserver {
 	MainView view;
