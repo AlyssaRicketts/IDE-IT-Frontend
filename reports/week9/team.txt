@@ -1,0 +1,23 @@
+Team Status Report: Week 9Last Week's Goals:* Meet with backend team to integrate latest version of backend release* Continue user testing with additional features from backend update* Finish formatting and make any UI changes based on user feedback* Write more integration and unit tests* Work on final report draft and presentationProgress this Week:* Met with backend team to integrate latest version of backend release
+* Continued user testing
+* Still finishing formatting
+* Continued writing integration tests
+* Completed final report draft and second presentation
+* Removed unused "enable" field in Suggestion object
+* Added "remove blank space at end of line" configuration setting
+* Code cleanup (deleted unnecessary extensions)
+* Created a new combined repository with updated backend
+* Created build system for new repository
+* Created counter for hotkey suggestion display so it doesn't appear more than 3 times
+* Implement a scrollable windowPlans and Goals for Next Week:* Continue integration tests
+* Document how a user could add their own configuration suggestions
+* Look into adding to Eclipse marketplace
+* Write final draft report
+* User testing with new features
+* Also implement counter for configuration suggestions?
+* Make suggestions appear at the top of window rather than the bottom
+* Fix the "invalid thread access" error
+* Check the user's current preferences before displaying the config suggestions
+Meeting Agenda:* Discuss why we have not been receiving customer feedback
+* What should we focus on in our final presentation?
+* Discuss the state of our repository now and what we should work on before the repository review
