@@ -119,14 +119,26 @@ public class UserInterfaceTester {
 	}
     
     @Test
- 	public void test6_testAddImportStatements() {
+ 	public void test6_testRemoveUnusedImports() {
+ 		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
+ 		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
+ 		
+ 		editor.typeText(0, 0, "import java.awt.*;");
+ 		bot.sleep(1000);
+ 		
+ 		SWTBotCLabel clabelBot = bot.clabel("Try using 'CTRL + SHIFT + O' to remove unused imports.");
+ 		SWTBotAssert.assertVisible(clabelBot);
+ 	}
+
+    @Test
+ 	public void test7_testAddImportStatements() {
  		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
  		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
  		
  		editor.typeText(7, 0, "\tMap<String, String> myMap = new Map<String, String>();");
  		bot.sleep(1000);
  		
- 		editor.typeText(0, 0, "import ");
+ 		editor.typeText(1, 0, "import ");
  		bot.sleep(1000);
  		
  		SWTBotCLabel clabelBot = bot.clabel("Try using 'CTRL + SHIFT + O' to add import statements.");
