@@ -79,7 +79,11 @@ public class MainView extends ViewPart {
     		s.setDisplay(false);
     		createConfigTip(s);
     	}
-    	thisParent.requestLayout();
+    	Display.getDefault().asyncExec(new Runnable() {
+    		public void run() {
+    			thisParent.requestLayout();
+    			}
+    		});
     }
 
     @Override
@@ -88,7 +92,11 @@ public class MainView extends ViewPart {
     }
     
     public void createHotkeyTip(Suggestion s) {
-    	HotkeyDisplayComposite hdc = new HotkeyDisplayComposite(thisParent, s, display);
+    	Display.getDefault().asyncExec(new Runnable() {
+    		public void run() {
+    			HotkeyDisplayComposite hdc = new HotkeyDisplayComposite(thisParent, s, display);
+    		}
+    	});
     }
     
     public void createConfigTip(Suggestion s) {
