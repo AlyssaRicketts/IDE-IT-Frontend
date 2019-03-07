@@ -97,26 +97,41 @@ public class UserInterfaceTester {
     }
     
     @Test
-	public void test5_testMultilineComment() throws Exception {
+	public void test5_testMultilineComment() {
 		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
 		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
 		
-		editor.setText("public class HelloWorld {\n\n" +
+		editor.setText("\n\npublic class HelloWorld {\n\n" +
 		    "\tpublic static void main(String[] args) {\n" +
 		        "\t\tSystem.out.println(\"Hello\");\n" +
-				"\t\tSystem.out.println(\"World\");\n" +
+				"\t\tSystem.out.println(\"World\");\n\n\n" +
 		    "\t}\n\n" +
 			"}");
 		
 		editor.save();
-		editor.typeText(3, 2, "//");
+		editor.typeText(5, 2, "//");
 		bot.sleep(200);
-		editor.typeText(4, 2, "//");
+		editor.typeText(6, 2, "//");
 		bot.sleep(200);
 		
 		SWTBotCLabel clabelBot = bot.clabel("Try using 'CMD + /' to comment several lines.");
 		SWTBotAssert.assertVisible(clabelBot);
 	}
+    
+    @Test
+ 	public void test6_testAddImportStatements() {
+ 		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
+ 		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
+ 		
+ 		editor.typeText(7, 0, "\tMap<String, String> myMap = new Map<String, String>();");
+ 		bot.sleep(1000);
+ 		
+ 		editor.typeText(0, 0, "import ");
+ 		bot.sleep(1000);
+ 		
+ 		SWTBotCLabel clabelBot = bot.clabel("Try using 'CTRL + SHIFT + O' to add import statements.");
+ 		SWTBotAssert.assertVisible(clabelBot);
+ 	}
     
      
 
