@@ -145,6 +145,20 @@ public class UserInterfaceTester {
  		SWTBotAssert.assertVisible(clabelBot);
  	}
     
+    @Test
+    public void test8_testCorrectIndentation() {
+ 		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
+ 		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
+ 		
+ 		editor.typeText(5, 2, "    ");
+		bot.sleep(200);
+		editor.typeText(6, 2, "    ");
+		bot.sleep(200);
+ 		
+ 		SWTBotCLabel clabelBot = bot.clabel("Try using 'CTRL + I' to correct indentation.");
+ 		SWTBotAssert.assertVisible(clabelBot);
+ 	}
+    
      
 
     
