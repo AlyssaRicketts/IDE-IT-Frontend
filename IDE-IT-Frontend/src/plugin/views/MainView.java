@@ -75,7 +75,8 @@ public class MainView extends ViewPart {
     		s.increaseCount();
     		s.setDisplay(false);
     		createHotkeyTip(s);
-    	} else if (s.getType() == CONFIG) {
+    	} else if (s.getType() == CONFIG && s.getDisplay()) {
+    		s.setDisplay(false);
     		createConfigTip(s);
     	}
     	thisParent.requestLayout();
