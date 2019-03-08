@@ -23,7 +23,7 @@ public class HotkeyDisplayComposite {
         CLabel hotkey = new CLabel(baseComposite, 0);
         hotkey.setImage(image);
         hotkey.setText(s.getText());
-    	
+
         Image exitButton = new Image(display, getClass().getResourceAsStream("../../../icons/ExitButton.png"));
     	Label test = new Label(baseComposite, SWT.NONE);
     	test.setImage(exitButton);

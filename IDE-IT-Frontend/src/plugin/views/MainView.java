@@ -5,10 +5,12 @@ import java.util.Map;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.layout.*;
 import org.eclipse.swt.widgets.*;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
+
 
 import main.interfaces.FeatureSuggestion;
 import main.interfaces.FeatureSuggestionInterface;
@@ -20,6 +22,8 @@ public class MainView extends ViewPart {
 	private static final int CONFIG = 0;
 	private static final int HOTKEY = 1;
 	private Composite thisParent;
+	private Composite child;
+	private ScrolledComposite sc;
 	private Display display;
 	FeatureSuggestionInterface fs = new FeatureSuggestion();
 	FSObserver obs = new FSObserver(this);
@@ -34,13 +38,26 @@ public class MainView extends ViewPart {
     	thisParent = parent;
     	fs.registerObserver(obs);
     	fs.start();
-    	display = PlatformUI.getWorkbench().getDisplay();		
+    	display = PlatformUI.getWorkbench().getDisplay();
     	
-    	RowLayout RowLayout = new RowLayout(SWT.VERTICAL);
-    	RowLayout.wrap = false;
-    	RowLayout.fill = true;
-    	thisParent.setLayout(RowLayout);
+    	org.eclipse.swt.graphics.Color white = display.getSystemColor(SWT.COLOR_WHITE);
+    	
+    	sc = new ScrolledComposite(thisParent, SWT.H_SCROLL | SWT.V_SCROLL);
+    	sc.setBackgroundMode(SWT.INHERIT_DEFAULT);
+    	sc.setBackground(white);
+    	
+    	child = new Composite(sc, SWT.NONE);
+    	
+    	RowLayout layout = new RowLayout(SWT.VERTICAL);
+    	layout.fill = true;
+    	layout.wrap = false;
+    	child.setLayout(layout);
+
     	hardCodeConfigs();
+    	
+    	child.setSize(400, 400);
+    	
+    	sc.setContent(child);
     }
     
     // For version 1, we will hard code configuration suggestions to appear
@@ -81,25 +98,25 @@ public class MainView extends ViewPart {
     	}
     	Display.getDefault().asyncExec(new Runnable() {
     		public void run() {
-    			thisParent.requestLayout();
+    			child.requestLayout();
     			}
     		});
     }
 
     @Override
     public void setFocus() {
-        thisParent.setFocus();
+        child.setFocus();
     }
     
     public void createHotkeyTip(Suggestion s) {
     	Display.getDefault().asyncExec(new Runnable() {
     		public void run() {
-    			new HotkeyDisplayComposite(thisParent, s, display);
+    			new HotkeyDisplayComposite(child, s, display);
     		}
     	});
     }
     
     public void createConfigTip(Suggestion s) {
-    	new ConfigDisplayComposite(thisParent, s, display);
+    	new ConfigDisplayComposite(child, s, display);
     }
 }
