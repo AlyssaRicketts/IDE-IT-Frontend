@@ -1,29 +1,29 @@
 package plugin.views;
 
+import java.awt.Rectangle;
+
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.layout.RowData;
-import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+import org.eclipse.ui.PlatformUI;
 
 import main.java.Suggestion;
 
 public class ConfigDisplayComposite {
 
-	public ConfigDisplayComposite(final Composite parent, Suggestion s) {
+	public ConfigDisplayComposite(final Composite parent, Suggestion s, Display display) {
 		final Composite baseComposite = new Composite(parent, SWT.NONE);
 
 		// Set layout
-		RowLayout rowLayout = new RowLayout();
-    	rowLayout.type = SWT.HORIZONTAL;
-    	rowLayout.pack = true;
-    	baseComposite.setLayout(rowLayout);
+		GridLayout GridLayout = new GridLayout();
+		GridLayout.numColumns = 2;
+		GridLayout.makeColumnsEqualWidth = true;
+    	baseComposite.setLayout(GridLayout);
 
     	// Add checkbox
     	Button checkBox = new Button(baseComposite, SWT.CHECK);
@@ -41,13 +41,22 @@ public class ConfigDisplayComposite {
     	}
 
     	// Add exit button
-    	Button exitButton = new Button(baseComposite, SWT.NONE);
-    	exitButton.setText("X");
-    	exitButton.addListener(SWT.Selection, new Listener() {
-  	      public void handleEvent(Event e) {
-  	    	  baseComposite.dispose();
-  	    	  parent.requestLayout();
-  	      }
+    	Image exitButton = new Image(display, getClass().getResourceAsStream("../../../icons/ExitButton.png"));
+    	Label test = new Label(baseComposite, SWT.NONE);
+    	test.setImage(exitButton);
+    	test.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseDoubleClick(MouseEvent e) {
+				baseComposite.dispose();
+				parent.requestLayout();
+				s.setDisplay(true);
+			}
+			
+			@Override
+			public void mouseDown(MouseEvent e) {}
+
+			@Override
+			public void mouseUp(MouseEvent e) {}	
     	});
 	}
 

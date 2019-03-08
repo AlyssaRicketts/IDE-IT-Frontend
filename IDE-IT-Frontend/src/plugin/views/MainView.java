@@ -5,9 +5,8 @@ import java.util.Map;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
@@ -27,19 +26,20 @@ public class MainView extends ViewPart {
 	
     public MainView() {
         super();
-    }
+      }
+    
     
     @Override
     public void createPartControl(Composite parent) {
     	thisParent = parent;
     	fs.registerObserver(obs);
     	fs.start();
-    	display = PlatformUI.getWorkbench().getDisplay();
-    	RowLayout rowLayout = new RowLayout();
-    	rowLayout.type = SWT.VERTICAL;
-    	rowLayout.pack = true;
-    	rowLayout.marginHeight = 0;
-    	thisParent.setLayout(rowLayout);
+    	display = PlatformUI.getWorkbench().getDisplay();		
+    	
+    	RowLayout RowLayout = new RowLayout(SWT.VERTICAL);
+    	RowLayout.wrap = false;
+    	RowLayout.fill = true;
+    	thisParent.setLayout(RowLayout);
     	hardCodeConfigs();
     }
     
@@ -94,12 +94,12 @@ public class MainView extends ViewPart {
     public void createHotkeyTip(Suggestion s) {
     	Display.getDefault().asyncExec(new Runnable() {
     		public void run() {
-    			HotkeyDisplayComposite hdc = new HotkeyDisplayComposite(thisParent, s, display);
+    			new HotkeyDisplayComposite(thisParent, s, display);
     		}
     	});
     }
     
     public void createConfigTip(Suggestion s) {
-    	ConfigDisplayComposite cdc = new ConfigDisplayComposite(thisParent, s);
+    	new ConfigDisplayComposite(thisParent, s, display);
     }
 }
