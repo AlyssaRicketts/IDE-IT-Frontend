@@ -9,6 +9,7 @@ public class Controller {
 
 	public Map<String, Suggestion> suggestionsMap;
 
+	// Initializes map of feature identifiers to all Suggestion objects
 	public Controller() {
 		suggestionsMap = new HashMap<String, Suggestion>();
 
@@ -34,8 +35,8 @@ public class Controller {
 		suggestionsMap.put("trailingWhiteSpaceSuggestion", new Suggestion("trailingWhiteSpaceSuggestion", "Automatically remove trailing white spaces on save", CONFIG, true));
 	}
 
+	// Returns map of feature identifiers to Suggestion objects
 	public Map<String, Suggestion> getSuggestionsMap() {
 		return suggestionsMap;
 	}
-
 }

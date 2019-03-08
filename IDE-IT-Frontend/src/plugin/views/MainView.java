@@ -28,11 +28,12 @@ public class MainView extends ViewPart {
 	FeatureSuggestionInterface fs = new FeatureSuggestion();
 	FSObserver obs = new FSObserver(this);
 	
+	// Instantiates the MainView class to display window view
     public MainView() {
         super();
       }
     
-    
+    // Creates the view's control with parent composite object
     @Override
     public void createPartControl(Composite parent) {
     	thisParent = parent;
@@ -60,6 +61,7 @@ public class MainView extends ViewPart {
     	sc.setContent(child);
     }
     
+    // Adds configuration suggestions to the window
     // For version 1, we will hard code configuration suggestions to appear
     public void hardCodeConfigs() {
     	Controller control = new Controller();
@@ -87,6 +89,9 @@ public class MainView extends ViewPart {
     	addFeature(shadowVariable);
     }
     
+    // Adds feature suggestion to window
+    // Displays Suggestion s with configuration checkbox or hotkey tip
+    // depending on type of s
     public void addFeature(Suggestion s) {
     	if (s.getType() == HOTKEY && s.getDisplay() && s.getCount() < 3) {
     		s.increaseCount();
@@ -103,11 +108,14 @@ public class MainView extends ViewPart {
     		});
     }
 
+    // Accepts focus of parent composite object
     @Override
     public void setFocus() {
         child.setFocus();
     }
     
+    // Creates new hotkey display composite object with Suggestion s,
+    // with a lightbulb icon, suggestion, and 'x' button
     public void createHotkeyTip(Suggestion s) {
     	Display.getDefault().asyncExec(new Runnable() {
     		public void run() {
@@ -116,6 +124,8 @@ public class MainView extends ViewPart {
     	});
     }
     
+    // Creates new configuration display composite object with Suggestion s
+    // with a checkbox, suggestion, and 'x' button
     public void createConfigTip(Suggestion s) {
     	new ConfigDisplayComposite(child, s, display);
     }
