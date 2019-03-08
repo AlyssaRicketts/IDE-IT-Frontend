@@ -45,15 +45,6 @@ public class UserInterfaceTester {
 		bot = new SWTWorkbenchBot();
 		openJavaPerspective();
 		closeWelcomePage();
-		
-		/*// Must set up preferences in workspace, to what the workspace typically launches as
-		IEclipsePreferences JDTUIPrefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.ui");
-		JDTUIPrefs.put("content_assist_autoactivation", "false");
-		JDTUIPrefs.put("smart_semicolon", "false");
-		
-		IEclipsePreferences JDTCorePrefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.core");
-		JDTCorePrefs.put("org.eclipse.jdt.core.compiler.problem.fieldHiding", "ignore");*/
-		
 		openIDEITWindow();
 		createANewJavaProject();
 		createANewJavaClass();
@@ -65,12 +56,12 @@ public class UserInterfaceTester {
     }
 	
 	@Test
-	public void test1_testOpenIDEITWindow() {
+	public void testA_testOpenIDEITWindow() {
 		assertNotNull(bot.viewByTitle("IDE-IT"));
 	}
 	
     @Test
-    public void test2_testContentAssistAutoActivation() {
+    public void testB_testContentAssistAutoActivation() {
     	IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.ui");
     	prefs.put("content_assist_autoactivation", "false");
     	assertTrue(prefs.get("content_assist_autoactivation", "default").equals("false"));
@@ -79,7 +70,7 @@ public class UserInterfaceTester {
     }
     
     @Test
-    public void test3_testSmartSemicolon() {
+    public void testC_testSmartSemicolon() {
     	IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.ui");
     	prefs.put("smart_semicolon", "false");
     	assertTrue(prefs.get("smart_semicolon", "default").equals("false"));
@@ -88,7 +79,7 @@ public class UserInterfaceTester {
     }
     
     @Test
-    public void test4_testShadowedVariableWarning() {
+    public void testD_testShadowedVariableWarning() {
     	IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.core");
     	prefs.put("org.eclipse.jdt.core.compiler.problem.fieldHiding", "ignore");
     	assertTrue(prefs.get("org.eclipse.jdt.core.compiler.problem.fieldHiding", "default").equals("ignore"));
@@ -97,14 +88,14 @@ public class UserInterfaceTester {
     }
     
     @Test
-	public void test5_testMultilineComment() {
+	public void testE_testMultilineComment() {
 		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
 		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
 		
 		editor.setText("\n\npublic class HelloWorld {\n\n" +
 		    "\tpublic static void main(String[] args) {\n" +
-		        "\t\tSystem.out.println(\"Hello\");\n" +
-				"\t\tSystem.out.println(\"World\");\n\n\n" +
+		        "\t\tSystem.out.println(\"Hello\");    \n" +
+				"\t\tSystem.out.println(\"World\");    \n\n\n" +
 		    "\t}\n\n" +
 			"}");
 		
@@ -119,7 +110,7 @@ public class UserInterfaceTester {
 	}
     
     @Test
- 	public void test6_testRemoveUnusedImports() {
+ 	public void testF_testRemoveUnusedImports() {
  		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
  		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
  		
@@ -131,7 +122,7 @@ public class UserInterfaceTester {
  	}
 
     @Test
- 	public void test7_testAddImportStatements() {
+ 	public void testG_testAddImportStatements() {
  		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
  		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
  		
@@ -146,7 +137,7 @@ public class UserInterfaceTester {
  	}
     
     @Test
-    public void test8_testCorrectIndentation() {
+    public void testH_testCorrectIndentation() {
  		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
  		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
  		
@@ -158,6 +149,35 @@ public class UserInterfaceTester {
  		SWTBotCLabel clabelBot = bot.clabel("Try using 'CTRL + I' to correct indentation.");
  		SWTBotAssert.assertVisible(clabelBot);
  	}
+    
+    @Test
+    public void testI_testRemoveTrailingWhitespace() {
+ 		SWTBotEclipseEditor editor = bot.editorByTitle("HelloWorld.java").toTextEditor();
+ 		SWTBotPreferences.KEYBOARD_STRATEGY = "org.eclipse.swtbot.swt.finder.keyboard.MockKeyboardStrategy";
+ 		
+ 		editor.typeText(5, 40, "\b\b\b\b");
+		bot.sleep(200);
+		editor.typeText(6, 40, "\b\b\b\b");
+		bot.sleep(200);
+ 		
+ 		SWTBotAssert.assertVisible(bot.checkBox("Automatically remove trailing white spaces on save"));
+ 	}
+    
+    @Test
+    public void testJ_clickTrailingWhitespaceCheckbox() {
+    	IEclipsePreferences prefs = InstanceScope.INSTANCE.getNode("org.eclipse.jdt.ui");
+    	prefs.put("editor_save_participant_org.eclipse.jdt.ui.postsavelistener.cleanup", "false");
+    	
+    	assertTrue(prefs.get("editor_save_participant_org.eclipse.jdt.ui.postsavelistener.cleanup", "default").equals("false"));
+    	
+        bot.checkBox("Automatically remove trailing white spaces on save").click();
+        bot.sleep(200);
+        
+        assertTrue(prefs.get("editor_save_participant_org.eclipse.jdt.ui.postsavelistener.cleanup", "default").equals("true"));
+        assertTrue(prefs.get("sp_cleanup.remove_trailing_whitespaces", "default").equals("true"));
+        assertTrue(prefs.get("sp_cleanup.remove_trailing_whitespaces_all", "default").equals("true"));
+ 	}
+	
     
      
 
