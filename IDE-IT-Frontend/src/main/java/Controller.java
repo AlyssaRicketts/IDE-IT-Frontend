@@ -25,6 +25,7 @@ public class Controller {
 		suggestionsMap.put("addImportStatementsSuggestion", new Suggestion("addImportStatementsSuggestion", "Try using 'CTRL + SHIFT + O' to add import statements.", HOTKEY, true));
 		suggestionsMap.put("removeUnusedImportStatementsSuggestion", new Suggestion("removeUnusedImportStatementsSuggestion", "Try using 'CTRL + SHIFT + O' to remove unused imports.", HOTKEY, true));
 		suggestionsMap.put("correctIndentationsSuggestion", new Suggestion("correctIndentationsSuggestion", "Try using 'CTRL + I' to correct indentation.", HOTKEY, true));
+		suggestionsMap.put("getterSetterSuggestion", new Suggestion("getterSetterSuggestion", "Try using 'ALT + SHIFT + S, R' to automatically generate getters and setters.", HOTKEY, true));
 
 		// Configurations
 		suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("enableAutocompleteSuggestion", "Enable content assist auto activation", CONFIG, true));

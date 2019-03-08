@@ -45,7 +45,8 @@ public class ControllerTest {
 		suggestionsMap.put("enableSmartSemicolonSuggestion", new Suggestion("enableSmartSemicolonSuggestion", "Enable smart semicolon activation", CONFIG, true));
 		suggestionsMap.put("enableShadowedVariableWarning", new Suggestion("enableShadowedVariableWarning", "Enable shadowed variable warning", CONFIG, true));
 		suggestionsMap.put("trailingWhiteSpaceSuggestion", new Suggestion("trailingWhiteSpaceSuggestion", "Automatically remove trailing white spaces on save", CONFIG, true));
-
+		suggestionsMap.put("getterSetterSuggestion", new Suggestion("getterSetterSuggestion", "Try using 'ALT + SHIFT + S, R' to automatically generate getters and setters.", HOTKEY, true));
+		
 		assertTrue(suggestionsMap.equals(controller.getSuggestionsMap()));
 	}
 }
