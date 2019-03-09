@@ -1,21 +1,28 @@
 package plugin.views;
 
-import java.awt.Rectangle;
-
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.*;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.*;
 import org.eclipse.swt.widgets.*;
-import org.eclipse.ui.PlatformUI;
 
 import main.java.Suggestion;
 
+/*
+ * Class defining a new composite object, containing a checkbox, text, and an exit button.
+ */
 public class ConfigDisplayComposite {
-
+	
+	/**
+	 * Creates a new ConfigDisplayComposite object.
+	 * 
+	 * @param parent. The composite object that this composite will be a child of.
+	 * @param s. The suggestion object for whose composite object we will be making. The
+	 * 				text from this object will be the text displayed in the composite object.
+	 * @param display. The display that will be appended.
+	 */
 	public ConfigDisplayComposite(final Composite parent, Suggestion s, Display display) {
 		final Composite baseComposite = new Composite(parent, SWT.NONE);
 
@@ -60,6 +67,12 @@ public class ConfigDisplayComposite {
     	});
 	}
 
+	/**
+	 * Adds a listener to the checkbox, which enables content assist auto activation when checked,
+	 * and disables it when unchecked.
+	 * 
+	 * @param checkBox. The checkbox to add a listener to.
+	 */
 	public void autoActivationCheckbox(Button checkBox) {
 		checkBox.addSelectionListener(new SelectionAdapter() {
     		@Override
@@ -89,6 +102,12 @@ public class ConfigDisplayComposite {
     	});
 	}
 
+	/**
+	 * Adds a listener to the checkbox, which enables content assist smart semicolon when checked,
+	 * and disables it when unchecked.
+	 * 
+	 * @param checkBox. The checkbox to add a listener to.
+	 */
 	public void smartSemicolonCheckbox(Button checkBox) {
 		checkBox.addSelectionListener(new SelectionAdapter() {
     		@Override
@@ -118,6 +137,12 @@ public class ConfigDisplayComposite {
     	});
 	}
 
+	/**
+	 * Adds a listener to the checkbox, which enables a compiler warning for shadowed variables when
+	 * checked, and ignores it when unchecked.
+	 * 
+	 * @param checkBox. The checkbox to add a listener to.
+	 */
 	public void shadowVariableWarning(Button checkBox) {
 		checkBox.addSelectionListener(new SelectionAdapter() {
     		@Override
@@ -149,6 +174,12 @@ public class ConfigDisplayComposite {
     	});
 	}
 
+	/**
+	 * Adds a listener to the checkbox, which enables trailing white spaces to be removed upon
+	 * save when checked, and disables it when unchecked.
+	 * 
+	 * @param checkBox. The checkbox to add a listener to.
+	 */
 	public void trailingWhitespace(Button checkBox) {
 		checkBox.addSelectionListener(new SelectionAdapter() {
     		@Override
