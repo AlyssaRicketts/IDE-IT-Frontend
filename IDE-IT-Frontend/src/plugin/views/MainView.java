@@ -40,7 +40,7 @@ public class MainView extends ViewPart {
     	fs.registerObserver(obs);
     	fs.start();
     	display = PlatformUI.getWorkbench().getDisplay();
-    	
+
     	org.eclipse.swt.graphics.Color white = display.getSystemColor(SWT.COLOR_WHITE);
     	
     	sc = new ScrolledComposite(thisParent, SWT.H_SCROLL | SWT.V_SCROLL);
