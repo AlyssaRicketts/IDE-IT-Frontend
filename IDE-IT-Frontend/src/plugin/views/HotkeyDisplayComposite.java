@@ -54,7 +54,11 @@ public class HotkeyDisplayComposite {
 			public void mouseDown(MouseEvent e) {}
 
 			@Override
-			public void mouseUp(MouseEvent e) {}	
+			public void mouseUp(MouseEvent e) {
+				baseComposite.dispose();
+				parent.requestLayout();
+				s.setDisplay(true);
+			}	
     	});
 	}
 }
