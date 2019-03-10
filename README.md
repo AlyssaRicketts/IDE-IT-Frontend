@@ -119,6 +119,7 @@ To connect your plugin, export your project as a jar file named as 'backend_plug
     a. At the bottom of the document, create a new method with an input parameter `Button checkBox` and no return values
     
     b. In this method, follow the pattern of the other methods here, by calling 
+    
         ```java
         checkBox.addSelectionListener(new SelectionAdapter() { 
             @Override
@@ -144,6 +145,7 @@ To connect your plugin, export your project as a jar file named as 'backend_plug
         ```
         
     c. Where the **Insert selection/deselection code here** is, insert the following:
+    
         ```java
         IEclipsePreferences prefs = <YourScope>Scope.<YourScope>.getNode(<YourNode>);
         prefs.put(<NodeName>, <value>);
