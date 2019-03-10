@@ -102,9 +102,9 @@ To connect your plugin, export your project as a jar file named as 'backend_plug
 
 1. In [Controller.java](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/main/java/Controller.java), add the desired string identifier and corresponding `Suggestion` object to the `suggestionsMap`
 
-    a. `Suggestion` object should include string identifier, the text to be displayed, `HOTKEY` as the `type` field, and `true` for the `display` field. See [Suggestion.java](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/main/java/Suggestion.java) for more information.
+   a. `Suggestion` object should include string identifier, the text to be displayed, `HOTKEY` as the `type` field, and `true` for the `display` field. See [Suggestion.java](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/main/java/Suggestion.java) for more information.
     
-    b. If the hotkey varies for different operating systems, add the corresponding text for each operating system, and put each `Suggestion` in the map under the corresponding branches for the operating systems.
+   b. If the hotkey varies for different operating systems, add the corresponding text for each operating system, and put each `Suggestion` in the map under the corresponding branches for the operating systems.
     
 <sup>[back to top](#ide-it-frontend)</sup>
 
@@ -112,13 +112,13 @@ To connect your plugin, export your project as a jar file named as 'backend_plug
 
 1. In [Controller.java](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/main/java/Controller.java), add the desired string identifier and corresponding `Suggestion` object to the `suggestionsMap`
 
-    a. `Suggestion` object should include string identifier, the text to be displayed, `CONFIG` as the `type` field, and `true` for the `display` field. See [Suggestion.java](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/main/java/Suggestion.java) for more information.
+   a. `Suggestion` object should include string identifier, the text to be displayed, `CONFIG` as the `type` field, and `true` for the `display` field. See [Suggestion.java](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/main/java/Suggestion.java) for more information.
 
 2. In [ConfigDisplayComposite.java](https://github.com/AlyssaRicketts/IDE-IT-Frontend/blob/master/IDE-IT-Frontend/src/plugin/views/ConfigDisplayComposite.java):
 
-    a. At the bottom of the document, create a new method with an input parameter `Button checkBox` and no return values
+   a. At the bottom of the document, create a new method with an input parameter `Button checkBox` and no return values
     
-    b. In this method, follow the pattern of the other methods here, by calling 
+   b. In this method, follow the pattern of the other methods here, by calling 
     
         
         checkBox.addSelectionListener(new SelectionAdapter() { 
@@ -144,26 +144,24 @@ To connect your plugin, export your project as a jar file named as 'backend_plug
         }
         
         
-    c. Where the **Insert selection/deselection code here** is, insert the following:
-    
+   c. Where the **Insert selection/deselection code here** is, insert the following:
        
         IEclipsePreferences prefs = <YourScope>Scope.<YourScope>.getNode(<YourNode>);
         prefs.put(<NodeName>, <value>);
         
+      `<YourScope>` should be replaced with the specific scope you are interested. I.e. Instance, Configuration, Default, or BundleDefaults. See [here](https://www.vogella.com/tutorials/EclipsePreferences/article.html) for more information.
+      
+      `<YourNode>` should be replaced with the preference node of interest.
+      
+      `<NodeName>` should be replaced with the name of the preference of interest.
+      
+      `<Value>` should indicate the value you want this preference to be set to upon check/uncheck.
     
-      YourScope should be replaced with the specific scope you are interested. I.e. Instance, Configuration, Default, or BundleDefaults. See [here](https://www.vogella.com/tutorials/EclipsePreferences/article.html) for more information.
-      
-      YourNode should be replaced with the preference node of interest. I.e. "org.eclipse.jdt.ui". 
-      
-      NodeName should be replaced with the name of the preference of interest.
-      
-      Value should indicate the value you want this preference to be set to upon check/uncheck.
-    
-    d. Add a new `else if` branch where the `Suggestion` object ID is checked against the desired string identifier
+   d. Add a new `else if` branch where the `Suggestion` object ID is checked against the desired string identifier
     
       i. Use `s.getID().equals(<insert string identifier>)`
     
-    e. In this branch, call the newly created method, passing the parameter `checkBox` to it
+   e. In this branch, call the newly created method, passing the parameter `checkBox` to it
     
 <sup>[back to top](#ide-it-frontend)</sup>
 
