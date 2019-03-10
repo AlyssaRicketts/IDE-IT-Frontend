@@ -120,7 +120,7 @@ To connect your plugin, export your project as a jar file named as 'backend_plug
     
     b. In this method, follow the pattern of the other methods here, by calling 
     
-        ```java
+        
         checkBox.addSelectionListener(new SelectionAdapter() { 
             @Override
             public void widgetSelected(SelectionEvent event) {
@@ -142,22 +142,26 @@ To connect your plugin, export your project as a jar file named as 'backend_plug
                 }
             }
         }
-        ```
+        
         
     c. Where the **Insert selection/deselection code here** is, insert the following:
     
-        ```java
+       
         IEclipsePreferences prefs = <YourScope>Scope.<YourScope>.getNode(<YourNode>);
         prefs.put(<NodeName>, <value>);
-        ```
+        
     
       YourScope should be replaced with the specific scope you are interested. I.e. Instance, Configuration, Default, or BundleDefaults. See [here](https://www.vogella.com/tutorials/EclipsePreferences/article.html) for more information.
+      
       YourNode should be replaced with the preference node of interest. I.e. "org.eclipse.jdt.ui". 
+      
       NodeName should be replaced with the name of the preference of interest.
+      
       Value should indicate the value you want this preference to be set to upon check/uncheck.
     
     d. Add a new `else if` branch where the `Suggestion` object ID is checked against the desired string identifier
-        i. Use `s.getID().equals(<insert string identifier>)`
+    
+      i. Use `s.getID().equals(<insert string identifier>)`
     
     e. In this branch, call the newly created method, passing the parameter `checkBox` to it
     
