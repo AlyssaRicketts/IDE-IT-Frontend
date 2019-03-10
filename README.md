@@ -159,7 +159,7 @@ To connect your plugin, export your project as a jar file named as 'backend_plug
     
    d. Add a new `else if` branch where the `Suggestion` object ID is checked against the desired string identifier
     
-      i. Use `s.getID().equals(<insert string identifier>)`
+      Use `s.getID().equals(<insert string identifier>)`
     
    e. In this branch, call the newly created method, passing the parameter `checkBox` to it
     
