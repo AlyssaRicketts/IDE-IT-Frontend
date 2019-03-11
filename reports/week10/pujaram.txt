@@ -1,0 +1,12 @@
+Individual Status Report: Week 10Plans and goals from last week: - Finish creating new integrated repository - Create build system for new repository - Write final draft report - Implement user feedback - User testing with new features  Progress this week: - Created counter for configuration suggestion display - Wrote about lessons learned in project 7 report
+ - Finished creating new integrated repository (combined frontend and backend projects)
+     > Updated build file to Maven (from Ant)
+     > Passing build with Travis CI
+     > Removed unnecessary dependencies
+     > Refined user manual
+     > Added all current tests to repo
+     > Created a script to update this repo by pulling frontend and backend repos
+ - User testing with new features and updated surveyPlans and goals for next week: - Finish writing final draft report
+ - Consolidate user feedback and implement any changes
+ - Figure out installation process for adding plugin into Eclipse
+ - Look into putting plugin on Eclipse Marketplace
