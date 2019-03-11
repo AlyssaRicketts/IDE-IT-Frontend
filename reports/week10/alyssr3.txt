@@ -1,0 +1,21 @@
+1. Last Week’s Goals	a. Continue integration tests - chat with BE team about my current multiline comment test and why the bot changes are not detected by their algorithm
+	b. Add "remove blank space at end of line" configuration suggestion
+	c. Document how a user could add their own configuration suggestions
+	d. Look into adding to Eclipse marketplace
+2. Progress This Week
+	a. Successfully completed all integration tests
+	b. Added "remove blank space at end of line" configuration suggestion
+	c. Document how a user could add their own hotkey suggestions
+	d. Document how a user could add their own preference suggestions
+	e. Fixed invalid thread access error
+	f. Added description to frontend repository
+	g. Added getter/setter suggestion
+	h. Make a video of our plugin for demo
+	i. Make a gif of our demo and put on Github user manual
+	j. User testing with new survey and features
+	k. Edit the running document
+3. Plans and Goals for Next Week
+	a. Check the user's default preferences before displaying the preference suggestions
+	b. Make presentation slides and give final presentation
+	c. Finalize everything as needed! Code cleanup, document, formatting, etc.
+	
