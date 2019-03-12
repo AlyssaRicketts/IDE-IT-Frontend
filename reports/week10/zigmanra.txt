@@ -1,0 +1,23 @@
+Individual Status Report #6
+IDE-IT Frontend
+Rachel Zigman
+
+Plans and Goals from Last Week:
+-	Continue to perform more user testing
+    o	Make changes to product based on user feedback
+-	Continue to fix formatting
+-	 Add any additional features the backend adds support for
+-	Work on finalizing our report
+
+Progress from this Week:
+This week I updated our user survey to include more quesitons about new
+features and updated formatting. I have also been updating our report to reflect
+updates with our user research as well as continuing to edit from feedback received 
+in the past week. I finished up the formatting for the plugin window - this included
+updated the lightbulb icon, editing the "X" button, and having the window be scrollable. 
+I've also been working on having suggestions appear at the top of the window rather than 
+the bottom but this will carry over into our last week.
+
+Plans and Goals for Next Week:
+- Have suggestions appear at top of window
+- Work on presentation slides and prepare to present
