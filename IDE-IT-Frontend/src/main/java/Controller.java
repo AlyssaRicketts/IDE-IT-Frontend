@@ -9,7 +9,9 @@ public class Controller {
 
 	public Map<String, Suggestion> suggestionsMap;
 
-	// Initializes map of feature identifiers to all Suggestion objects
+	/**
+	 * Initializes map of feature identifiers to all Suggestion objects
+	 */
 	public Controller() {
 		suggestionsMap = new HashMap<String, Suggestion>();
 
@@ -39,6 +41,11 @@ public class Controller {
 	}
 
 	// Returns map of feature identifiers to Suggestion objects
+	/**
+	 * Get map of feature ids to Suggestions
+	 * 
+	 * @return map of feature identifiers to Suggestion objects
+	 */
 	public Map<String, Suggestion> getSuggestionsMap() {
 		return suggestionsMap;
 	}
