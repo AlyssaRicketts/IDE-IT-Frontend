@@ -34,7 +34,7 @@ public class ControllerTest {
 			suggestionsMap.put("removeUnusedImportStatementsSuggestion", new Suggestion("removeUnusedImportStatementsSuggestion", "Try using 'CMD + SHIFT + O' to remove unused imports.", HOTKEY, true));
 			suggestionsMap.put("correctIndentationsSuggestion", new Suggestion("correctIndentationsSuggestion", "Try using 'CMD + I' to correct indentation.", HOTKEY, true));
 		} else {  // Windows
-			suggestionsMap.put("blockCommentSuggestion", new Suggestion("blockCommentSuggestion", "Try using 'CTRL + SHIFT + /' to comment several lines.", HOTKEY, true));
+			suggestionsMap.put("blockCommentSuggestion", new Suggestion("blockCommentSuggestion", "Try using 'CTRL + /' to comment several lines.", HOTKEY, true));
 			suggestionsMap.put("variableRenameRefactorSuggestion", new Suggestion("variableRenameRefactorSuggestion", "Try using 'ALT + SHIFT + R' to rename all instances of a variable, class, or method.", HOTKEY, true));
 			suggestionsMap.put("addImportStatementsSuggestion", new Suggestion("addImportStatementsSuggestion", "Try using 'CTRL + SHIFT + O' to add import statements.", HOTKEY, true));
 			suggestionsMap.put("removeUnusedImportStatementsSuggestion", new Suggestion("removeUnusedImportStatementsSuggestion", "Try using 'CTRL + SHIFT + O' to remove unused imports.", HOTKEY, true));
