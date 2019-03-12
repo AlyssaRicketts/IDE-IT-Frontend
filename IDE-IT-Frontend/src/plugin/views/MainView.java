@@ -144,6 +144,11 @@ public class MainView extends ViewPart {
      * @param s - Suggestion object that is a configuration setting
      */
     public void createConfigTip(Suggestion s) {
-    	new ConfigDisplayComposite(child, s, display);
+    	Display.getDefault().asyncExec(new Runnable() {
+    		@Override
+    		public void run() {
+    			new ConfigDisplayComposite(child, s, display);
+    		}
+    	});
     }
 }
