@@ -64,7 +64,7 @@ This section provides the instruction for installing IDE-IT Frontend for develop
 
 ### 2.4 Run Project as Eclipse Application
 
-To run the entire IDE-IT application with the backend, you will need to import the backend project into your Eclipse workspace as well. Clone the project using the same steps as listed under Section 2.3, just changing the URI link to the corresponding backend repository.
+To run the entire IDE-IT application with the backend, you will need to import the [backend project](https://github.com/DavidThien/IDE-IT) into your Eclipse workspace as well. Clone the project using the same steps as listed under Section 2.3, just changing the URI link to the corresponding backend repository.
 
 To test any development changes to IDE-IT-Frontend, right click the **IDE-IT-Frontend** project. Then, choose **Run As | Eclipse Application**. The new workspace should open in a new window.
 
