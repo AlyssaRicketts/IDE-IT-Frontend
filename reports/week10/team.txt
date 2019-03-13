@@ -1,0 +1,31 @@
+Team Status Report: Week 10
+
+Last Week's Goals:
+ - Continue integration tests
+ - Document how a user could add their own configuration suggestions
+ - Look into adding to Eclipse marketplace
+ - Write final draft report
+ - User testing with new features
+ - Also implement counter for configuration suggestions?
+ - Make suggestions appear at the top of window rather than the bottom
+ - Fix the "invalid thread access" error
+ - Check the user's current preferences before displaying the config suggestions
+
+Progress this Week:
+ - Completed all integration tests
+ - Documented how user can add their own hotkeys and preferences
+ - Fixed thread access errors
+ - Made video for plugin demo
+ - Revised survey with more questions
+ - User testing with new survey and features
+ - Updated formatting
+ - Edited final report with final results and feedback
+ - Created new integrated repository with new build and user manual
+
+Plans and Goals for Next Week:
+ - Repository review for another team
+ - Finish final presentation slides
+ - Put plugin on Eclipse Marketplace?
+
+Meeting Agenda
+ - Discuss final presentation
