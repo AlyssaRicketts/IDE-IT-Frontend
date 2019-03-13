@@ -56,7 +56,7 @@ This section provides the instruction for installing IDE-IT Frontend for develop
 2. From the menu choose: **File | Import**
 3. Click the **Projects from Git** option under the Git folder and press Next
 4. Select **Clone URI** as your repository source and press Next
-5. Paste https://github.com/pujaram/Eclipse-IDE-IT in the URI textbox and press Next
+5. Paste https://github.com/AlyssaRicketts/IDE-IT-Frontend in the URI textbox and press Next
 6. Select the master branch and press Next
 7. Choose a destination directory on your local machine for the project and press Next
 8. Use the **Import existing Eclipse projects** wizard and continue
