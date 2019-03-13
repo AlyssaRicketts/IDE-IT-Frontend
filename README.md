@@ -76,7 +76,7 @@ To use this plugin, we recommend using the integrated repository located at http
 
 To start using IDE-IT, first make sure the IDE-IT window is visible in your IDE. If it is not visible finish the steps in Installation above. Once the window is visible, just begin working on your project. The window will update based on patterns in your keystrokes with hotkey tips and features you might want to enable or disable.
 
-<a href="https://imgflip.com/gif/2vqfmd"><img src="https://i.imgflip.com/2vqfmd.gif" title="made at imgflip.com" width="500"/></a>
+<a href="https://imgflip.com/gif/2vqfmd"><img src="https://i.imgflip.com/2vqfmd.gif" title="made at imgflip.com"/></a>
 
 ### 3.1 Window Appearance    
 
