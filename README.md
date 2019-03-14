@@ -38,7 +38,7 @@ This section provides the instruction for installing IDE-IT Frontend for develop
 
 1. Java JDK version 1.8.0 or higher. See [Oracle Java Downloads](https://www.oracle.com/technetwork/java/javase/downloads/index.html) for more.
 2. Apache Ant version 1.10.5 or higher. See [Apache Ant Binary Distributions](https://ant.apache.org/bindownload.cgi) for more.
-3. Eclipse IDE version 2018-12 or higher. See [Eclipse IDE Downloads](https://www.eclipse.org/eclipseide/) for more.
+3. Eclipse IDE for RCP and RAP Developers 2018-12 or higher. See [Eclipse IDE Downloads](https://www.eclipse.org/downloads/packages/release/2018-12/r/eclipse-ide-rcp-and-rap-developers) for more.
 
 ### 2.2 Build Project
 
